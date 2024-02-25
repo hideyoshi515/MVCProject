@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="layout/default_layout"
+>
+<th:block layout:fragment="content">
+    <div id="load">
+        <img src="/img/loading.gif" alt="loading">
+    </div>
+
+    <div id='wrapper' class="d-flex justify-content-center align-items-center">
+        <div class="card none-select" style="width: 28rem; min-width: 28rem;">
+            <form class="m-2 justify-content-center">
+                <p class="text-danger text-center fs-6 mt-4 mb-4" th:utext="#{error_username}"></p>
+                <a href="/register"><button type="button" class="btn btn-primary btn-block mb-4 w-100" th:text="#{back}"></button></a>
+            </form>
+        </div>
+    </div>
+</th:block>
+</html>

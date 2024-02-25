@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="layout/default_layout"
+>
+<th:block layout:fragment="content">
+    <div id="load">
+        <img src="/img/loading.gif" alt="loading">
+    </div>
+
+    <div id='wrapper' class="d-flex justify-content-center align-items-center">
+        <div class="card none-select" style="width: 28rem; min-width: 28rem;">
+            <form class="m-2 justify-content-center" th:method="post" th:action="@{/login}" th:object="${loginRequest}">
+                <h4 th:text="#{signin}" class="text-center m-2 mb-3">[[${nickname}]]</h4>
+                <!-- Email input -->
+                <div class="form-floating form-outline mb-2 justify-content-center">
+                    <input type="text" id="loginId" th:field="*{loginId}" class="form-control w-100" placeholder="Username"/>
+                    <label class="form-label" th:for="loginId" th:text="#{username}"></label>
+                </div>
+
+                <!-- Password input -->
+                <div class="form-floating form-outline mb-4 justify-content-center">
+                    <input type="password"  id="password" th:field="*{password}"  class="form-control w-100" placeholder="Password"/>
+                    <label class="form-label" th:for="password" th:text="#{password}"></label>
+                </div>
+
+                <!-- 2 column grid layout for inline styling -->
+                <div class="row justify-content-center mx-auto">
+                    <div class="col d-flex justify-content-around">
+                        <!-- Checkbox -->
+                        <span class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="form_checkRemember" checked/>
+                            <label class="form-check-label" for="form_checkRemember" th:text="#{remember}"></label>
+                        </span>
+                        <!-- Forgot link -->
+                        <a href="#!" th:text="#{forgotPW}"></a>
+                    </div>
+                </div>
+
+                <div class="text-center mb-4">
+                    <span th:text="#{notamember}"></span> <span><a href="/register" th:text="#{register}"
+                                                                   class="text-primary"></a></span>
+                </div>
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-primary btn-block mb-4 w-100" th:text="#{signin}"></button>
+
+                <!-- Register buttons -->
+                <div class="text-center">
+                    <p th:text="#{orsuw}"></p>
+                    <button type="button" class="btn btn-outline-dark btn-block mx-1 mt-1">
+                        <img src="/img/google.png"
+                             style="width: 1.5rem; height: auto; margin: 0; vertical-align: bottom;">
+                        <span th:text="#{signin_google}"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</th:block>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<th:block th:fragment="headerFragment">
+    <head>
+        <title>네코 코틀린 MVC</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <!--부트스트랩 css 추가-->
+        <link rel="stylesheet" href="/css/bootstrap.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <!--jQuery 추가-->
+        <script src="/js/jquery.js"></script>
+        <!--부트스트랩 script 추가-->
+        <script src="/js/bootstrap.js"></script>
+        <!--메인 script 추가-->
+        <script src="/js/main.js"></script>
+    </head>
+    <header style="background-color: #dddddd" height="3rem">
+        <!--드롭다운 메뉴 추가-->
+        <div class="d-flex justify-content-start ps-1 pt-1" style="float:left">
+                <a href="/" title="네코 코틀린 MVC" style="padding-top:0.15rem">
+                    <img src="/icon.svg" width="36" height="36">
+                </a>
+            <div class="dropdown">
+                <button
+                        class="btn border-0"
+                        type="button"
+                        id="dropdownMenuButton1"
+                        data-mdb-toggle="dropdown"
+                        aria-expanded="false"
+                >
+                    드롭다운 버튼1
+                </button>
+                <ul class="dropdown-menu dropdown-menu-center rounded-0" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="#">드롭다운 1-1</a></li>
+                    <li><hr class="dropdown-divider "></li>
+                    <li><a class="dropdown-item" href="#">드롭다운 1-2</a></li>
+                    <li><hr class="dropdown-divider "></li>
+                    <li><a class="dropdown-item" href="#">드롭다운 1-3</a></li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <button
+                        class="btn border-0"
+                        type="button"
+                        id="dropdownMenuButton2"
+                        data-mdb-toggle="dropdown"
+                        aria-expanded="false"
+                >
+                    드롭다운 버튼2
+                </button>
+                <ul class="dropdown-menu dropdown-menu-center rounded-0" aria-labelledby="dropdownMenuButton2" >
+                    <li><a class="dropdown-item" href="#">드롭다운 2-1</a></li>
+                    <li><hr class="dropdown-divider "></li>
+                    <li><a class="dropdown-item" href="#">드롭다운 2-2</a></li>
+                    <li><hr class="dropdown-divider "></li>
+                    <li><a class="dropdown-item" href="#">드롭다운 2-3</a></li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <button
+                        class="btn border-0"
+                        type="button"
+                        id="dropdownMenuButton3"
+                        data-mdb-toggle="dropdown"
+                        aria-expanded="false"
+                >
+                    드롭다운 버튼3
+                </button>
+                <ul class="dropdown-menu dropdown-menu-center rounded-0" aria-labelledby="dropdownMenuButton3">
+                    <li><a class="dropdown-item" href="#">드롭다운 3-1</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">드롭다운 3-2</a></li>
+                    <li><hr class="dropdown-divider "></li>
+                    <li><a class="dropdown-item" href="#">드롭다운 3-3</a></li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <button
+                        class="btn border-0"
+                        type="button"
+                        id="dropdownMenuButton4"
+                        data-mdb-toggle="dropdown"
+                        aria-expanded="false"
+                >
+                    드롭다운 버튼4
+                </button>
+                <ul class="dropdown-menu dropdown-menu-center rounded-0 mb-0" aria-labelledby="dropdownMenuButton4">
+                    <li><a class="dropdown-item" href="#">드롭다운 4-1</a></li>
+                    <li><hr class="dropdown-divider "></li>
+                    <li><a class="dropdown-item" href="#">드롭다운 4-2</a></li>
+                    <li><hr class="dropdown-divider "></li>
+                    <li><a class="dropdown-item" href="#">드롭다운 4-3</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="d-flex justify-content-end pe-1 pt-1" style="float: right">
+            <button
+                    class="btn btn-outline-dark border-1"
+                    type="button"
+                    id="loginButton"
+            >
+                로그인
+            </button>
+        </div>
+    </header>
+</th:block>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layout/default_layout">
+<th:block layout:fragment="content">
+    <div id="load">
+        <img src="/img/loading.gif" alt="loading">
+    </div>
+    <div id='wrapper' class="d-flex justify-content-center align-items-center" ondragstart="return false">
+        <div class="mainPage" style="margin:0 auto;">
+            <h1 style="text-align: center; padding-top: 1rem; padding-bottom: 1rem;" th:text="#{menu1}"></h1>
+            <div class="dropdown-center" align="center" style="padding-bottom: 1rem;">
+                <button class="btn btn-outline-dark dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" th:text="#{orderby}"></button>
+                <ul class="dropdown-menu rounded-0" aria-labelledby="dropdownMenuButton1">
+                    <li>
+                        <a class="dropdown-item rounded-0" href="./release" th:text="#{o_release}"></a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item rounded-0" href="./release_r" th:text="#{o_release_r}"></a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item rounded-0" href="./ascjpn" th:text="#{o_ascjpn}"></a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item rounded-0" href="./descjpn" th:text="#{o_descjpn}"></a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item rounded-0" href="./asckor" th:text="#{o_asckor}"></a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item rounded-0" href="./desckor" th:text="#{o_desckor}"></a>
+                    <li>
+                        <a class="dropdown-item rounded-0" href="./asceng" th:text="#{o_asceng}"></a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item rounded-0" href="./desceng" th:text="#{o_desceng}"></a>
+                    </li>
+                </ul>
+                <div th:text="#{now}+':'+${nowsort}"></div>
+            </div>
+            <table id="umaTable" class="table">
+                <thead></thead>
+                <tbody>
+                <tr th:each="umamusume : ${umamusumes}" align="center" valign="middle">
+                    <td>
+                        <span class="fi fi-jp border m-0 p-0" style="display:inline-block; aspect-ratio: auto; height: 1rem;"></span>
+                        <span class="px-1"></span>[[${umamusume.jpn_name}]] <br>
+                        <span class="fi fi-kr border m-0 p-0" style="display:inline-block; aspect-ratio: auto; height: 1rem;"></span>
+                        <span class="px-1"></span>[[${umamusume.kor_name}]] <br>
+                        <span class="fi fi-gb border m-0 p-0" style="display:inline-block; aspect-ratio: auto; height: 1rem;"></span>
+                        <span class="px-1"></span>[[${umamusume.eng_name}]]
+                    </td>
+                    <td>
+                        <p>
+                            <img th:src="@{${umamusume.img + 'profile.png'}}" alt="" width="auto" height="209px">
+                            <img th:src="@{${umamusume.img + 'stand.png'}}" alt="" style="display: none">
+                        </p>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</th:block>
+</html>

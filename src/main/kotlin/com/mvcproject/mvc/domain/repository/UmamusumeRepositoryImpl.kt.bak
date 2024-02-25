@@ -1,0 +1,26 @@
+package com.mvcproject.mvc.domain.repository
+
+import com.mvcproject.mvc.domain.model.entity.Umamusume
+import jakarta.persistence.EntityManager
+import lombok.RequiredArgsConstructor
+import org.springframework.stereotype.Repository
+
+@Repository
+@RequiredArgsConstructor
+class UmamusumeRepositoryImpl: UmamusumeRepository{
+    lateinit var em:EntityManager;
+    fun save(uma: Umamusume): Umamusume {
+        em.persist(uma)
+        return uma
+    }
+
+    fun findUmamusume(id: Long): Umamusume {
+        val findUmamusume:Umamusume = em.find(Umamusume::class.java, id)
+        return  findUmamusume
+    }
+
+    fun showUmamusume(): List<Umamusume> {
+        return em.createQuery("select m from Umamusume m", Umamusume::class.java).getResultList()
+    }
+
+}

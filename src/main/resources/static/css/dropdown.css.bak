@@ -1,0 +1,72 @@
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 3rem !important;
+    min-height: 3rem !important;
+    z-index: 100;
+}
+
+body {
+    padding-top: 3rem;
+}
+
+#wrapper{
+    min-height: calc(100vh - 6rem);
+    position: relative;
+}
+footer{
+    height: 3rem;
+}
+
+/*Bootstrapのボタンアウトライン削除*/
+.btn:active, .btn:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.dropdown:hover > .dropdown-menu {
+    display: block;
+}
+
+.dropdown > .dropdown-toggle:active {
+    /*クリックイベント防止*/
+    pointer-events: none;
+}
+
+.dropdown-menu.dropdown-menu-center {
+    left: 50% !important;
+    right: auto !important;
+    text-align: center !important;
+    transform: translate(-50%, 0) !important;
+}
+
+/*ドロップダウンメニューの色設定*/
+.dropdown.active.open > a,
+.dropdown.active.open > ul.dropdown-menu a:hover,
+.dropdown.open > a,
+.dropdown-menu a:hover {
+    color: #000000 !important;
+    background: #e6e6e6 !important;
+}
+
+/*ドロップダウンメニューをクリックした時の色設定*/
+.dropdown.active.open > a,
+.dropdown.active.open > ul.dropdown-menu a:focus,
+.dropdown.open > a,
+.dropdown-menu a:focus {
+    color: #000000 !important;
+    background: #a6a6a6 !important;
+}
+
+
+/*ドロップダウンメニューのPadding, margin削除*/
+.dropdown-menu {
+    padding-top: 0;
+    padding-bottom: 0;
+    min-width: inherit; /*136px;;*/
+}
+
+.dropdown-divider {
+    margin: 0;
+}

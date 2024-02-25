@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<th:block th:fragment="footerFragment">
+    <footer>
+            <hr class="my-0">
+            <div class="text-right text-white" style="padding-right: 0.5rem;">
+                <div class="dropdown-center text-white" align="right" style="padding-top:0.5rem; padding-bottom: 0.5rem;">
+                    <button class="btn btn-outline-light dropdown-toggle border-0 umacolorbtn" type="button" id="languageMenuButton"
+                            data-bs-toggle="dropdown" aria-expanded="false" th:text="#{language}">
+                    </button>
+                    <ul class="dropdown-menu umacolordropdown-menu rounded-0 fw-light" aria-labelledby="languageMenuButton">
+                        <li><a href="?lang=ko" class="dropdown-item umacolordropdown-item rounded-0 fw-light" th:text="#{korean}"></a></li>
+                        <li><a href="?lang=ja" class="dropdown-item umacolordropdown-item rounded-0 fw-light" th:text="#{japanese}"></a></li>
+                        <li><a href="?lang=en" class="dropdown-item umacolordropdown-item rounded-0 fw-light" th:text="#{english}"></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center text-light">Designed & Made by NecoHost</div>
+    </footer>
+</th:block>
+</html>

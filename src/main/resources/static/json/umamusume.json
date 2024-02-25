@@ -1,0 +1,925 @@
+{
+  "umamusume": [
+    {
+        "default": "SpecialWeek",
+        "ko": "스페셜위크",
+        "ja": "スペシャルウィーク",
+        "en": "Special Week",
+      "imageSrc": "/img/umaimage/SpecialWeek/main.png",
+      "id": 1
+    },
+    {
+        "default": "SilenceSuzuka",
+        "ko": "사일런스 스즈카",
+        "ja": "サイレンススズカ",
+        "en": "Silence Suzuka",
+      "imageSrc": "/img/umaimage/SilenceSuzuka/main.png",
+      "id": 2
+    },
+    {
+        "default": "TokaiTeio",
+        "ko": "토카이 테이오",
+        "ja": "トウカイテイオー",
+        "en": "Tokai Teio",
+      "imageSrc": "/img/umaimage/TokaiTeio/main.png",
+      "id": 3
+    },
+    {
+        "default": "Maruzensky",
+        "ko": "마루젠스키",
+        "ja": "マルゼンスキー",
+        "en": "Maruzensky",
+      "imageSrc": "/img/umaimage/Maruzensky/main.png",
+      "id": 4
+    },
+    {
+        "default": "FujiKiseki",
+        "ko": "후지 키세키",
+        "ja": "フジキセキ",
+        "en": "Fuji Kiseki",
+      "imageSrc": "/img/umaimage/FujiKiseki/main.png",
+      "id": 5
+    },
+    {
+        "default": "OguriCap",
+        "ko": "오구리 캡",
+        "ja": "オグリキャップ",
+        "en": "Oguri Cap",
+      "imageSrc": "/img/umaimage/OguriCap/main.png",
+      "id": 6
+    },
+    {
+        "default": "GoldShip",
+        "ko": "골드 쉽",
+        "ja": "ゴールドシップ",
+        "en": "Gold Ship",
+      "imageSrc": "/img/umaimage/GoldShip/main.png",
+      "id": 7
+    },
+    {
+        "default": "Vodka",
+        "ko": "보드카",
+        "ja": "ウオッカ",
+        "en": "Vodka",
+      "imageSrc": "/img/umaimage/Vodka/main.png",
+      "id": 8
+    },
+    {
+        "default": "DaiwaScarlet",
+        "ko": "다이와 스칼렛",
+        "ja": "ダイワスカーレット",
+        "en": "Daiwa Scarlet",
+      "imageSrc": "/img/umaimage/DaiwaScarlet/main.png",
+      "id": 9
+    },
+    {
+        "default": "TaikiShuttle",
+        "ko": "타이키 셔틀",
+        "ja": "タイキシャトル",
+        "en": "Taiki Shuttle",
+      "imageSrc": "/img/umaimage/TaikiShuttle/main.png",
+      "id": 10
+    },
+    {
+        "default": "GrassWonder",
+        "ko": "그래스 원더",
+        "ja": "グラスワンダー",
+        "en": "Grass Wonder",
+      "imageSrc": "/img/umaimage/GrassWonder/main.png",
+      "id": 11
+    },
+    {
+        "default": "HishiAmazon",
+        "ko": "히시 아마존",
+        "ja": "ヒシアマゾン",
+        "en": "Hishi Amazon",
+      "imageSrc": "/img/umaimage/HishiAmazon/main.png",
+      "id": 12
+    },
+    {
+        "default": "MejiroMcQueen",
+        "ko": "메지로 맥퀸",
+        "ja": "メジロマックイーン",
+        "en": "Mejiro McQueen",
+      "imageSrc": "/img/umaimage/MejiroMcQueen/main.png",
+      "id": 13
+    },
+    {
+        "default": "ElCondorPasa",
+        "ko": "엘 콘도르 파사",
+        "ja": "エルコンドルパサー",
+        "en": "El Condor Pasa",
+      "imageSrc": "/img/umaimage/ElCondorPasa/main.png",
+      "id": 14
+    },
+    {
+        "default": "TMOperao",
+        "ko": "티엠 오페라 오",
+        "ja": "テイエムオペラオー",
+        "en": "TM Opera O",
+      "imageSrc": "/img/umaimage/TMOperao/main.png",
+      "id": 15
+    },
+    {
+        "default": "NaritaBrian",
+        "ko": "나리타 브라이언",
+        "ja": "ナリタブライアン",
+        "en": "Narita Brian",
+      "imageSrc": "/img/umaimage/NaritaBrian/main.png",
+      "id": 16
+    },
+    {
+        "default": "SymboliRudolf",
+        "ko": "심볼리 루돌프",
+        "ja": "シンボリルドルフ",
+        "en": "Symboli Rudolf",
+      "imageSrc": "/img/umaimage/SymboliRudolf/main.png",
+      "id": 17
+    },
+    {
+        "default": "AirGroove",
+        "ko": "에어 그루브",
+        "ja": "エアグルーヴ",
+        "en": "Air Groove",
+      "imageSrc": "/img/umaimage/AirGroove/main.png",
+      "id": 18
+    },
+    {
+        "default": "AgnesDigital",
+        "ko": "아그네스 디지털",
+        "ja": "アグネスデジタル",
+        "en": "Agnes Digital",
+      "imageSrc": "/img/umaimage/AgnesDigital/main.png",
+      "id": 19
+    },
+    {
+        "default": "TamamoCross",
+        "ko": "타마모 크로스",
+        "ja": "タマモクロス",
+        "en": "Tamamo Cross",
+      "imageSrc": "/img/umaimage/TamamoCross/main.png",
+      "id": 20
+    },
+    {
+        "default": "SeiunSky",
+        "ko": "세이운 스카이",
+        "ja": "セイウンスカイ",
+        "en": "Seiun Sky",
+      "imageSrc": "/img/umaimage/SeiunSky/main.png",
+      "id": 21
+    },
+    {
+        "default": "FineMotion",
+        "ko": "파인 모션",
+        "ja": "ファインモーション",
+        "en": "Fine Motion",
+      "imageSrc": "/img/umaimage/FineMotion/main.png",
+      "id": 22
+    },
+    {
+        "default": "BiwaHayahide",
+        "ko": "비와 하야히데",
+        "ja": "ビワハヤヒデ",
+        "en": "Biwa Hayahide",
+      "imageSrc": "/img/umaimage/BiwaHayahide/main.png",
+      "id": 23
+    },
+    {
+        "default": "MayanoTopGun",
+        "ko": "마야노 탑건",
+        "ja": "マヤノトップガン",
+        "en": "Mayano Top Gun",
+      "imageSrc": "/img/umaimage/MayanoTopGun/main.png",
+      "id": 24
+    },
+    {
+        "default": "ManhattanCafe",
+        "ko": "맨하탄 카페",
+        "ja": "マンハッタンカフェ",
+        "en": "Manhattan Cafe",
+      "imageSrc": "/img/umaimage/ManhattanCafe/main.png",
+      "id": 25
+    },
+    {
+        "default": "MihonoBourbon",
+        "ko": "미호노 부르봉",
+        "ja": "ミホノブルボン",
+        "en": "Mihono Bourbon",
+      "imageSrc": "/img/umaimage/MihonoBourbon/main.png",
+      "id": 26
+    },
+    {
+        "default": "MejiroRyan",
+        "ko": "메지로 라이언",
+        "ja": "メジロライアン",
+        "en": "Mejiro Ryan",
+      "imageSrc": "/img/umaimage/MejiroRyan/main.png",
+      "id": 27
+    },
+    {
+        "default": "HishiAkebono",
+        "ko": "히시 아케보노",
+        "ja": "ヒシアケボノ",
+        "en": "Hishi Akebono",
+      "imageSrc": "/img/umaimage/HishiAkebono/main.png",
+      "id": 28
+    },
+    {
+        "default": "YukinoBijin",
+        "ko": "유키노 비진",
+        "ja": "ユキノビジン",
+        "en": "Yukino Bijin",
+      "imageSrc": "/img/umaimage/YukinoBijin/main.png",
+      "id": 29
+    },
+    {
+        "default": "RiceShower",
+        "ko": "라이스 샤워",
+        "ja": "ライスシャワー",
+        "en": "Rice Shower",
+      "imageSrc": "/img/umaimage/RiceShower/main.png",
+      "id": 30
+    },
+    {
+        "default": "InesFujin",
+        "ko": "아이네스 후진",
+        "ja": "アイネスフウジン",
+        "en": "Ines Fujin",
+      "imageSrc": "/img/umaimage/InesFujin/main.png",
+      "id": 31
+    },
+    {
+        "default": "AgnesTachyon",
+        "ko": "아그네스 타키온",
+        "ja": "アグネスタキオン",
+        "en": "Agnes Tachyon",
+      "imageSrc": "/img/umaimage/AgnesTachyon/main.png",
+      "id": 32
+    },
+    {
+        "default": "AdmireVega",
+        "ko": "어드마이어 베가",
+        "ja": "アドマイヤベガ",
+        "en": "Admire Vega",
+      "imageSrc": "/img/umaimage/AdmireVega/main.png",
+      "id": 33
+    },
+    {
+        "default": "InariOne",
+        "ko": "이나리 원",
+        "ja": "イナリワン",
+        "en": "Inari One",
+      "imageSrc": "/img/umaimage/InariOne/main.png",
+      "id": 34
+    },
+    {
+        "default": "WinningTicket",
+        "ko": "위닝 티켓",
+        "ja": "ウイニングチケット",
+        "en": "Winning Ticket",
+      "imageSrc": "/img/umaimage/WinningTicket/main.png",
+      "id": 35
+    },
+    {
+        "default": "AirShakur",
+        "ko": "에어 샤커",
+        "ja": "エアシャカール",
+        "en": "Air Shakur",
+      "imageSrc": "/img/umaimage/AirShakur/main.png",
+      "id": 36
+    },
+    {
+        "default": "EishinFlash",
+        "ko": "에이신 플래시",
+        "ja": "エイシンフラッシュ",
+        "en": "Eishin Flash",
+      "imageSrc": "/img/umaimage/EishinFlash/main.png",
+      "id": 37
+    },
+    {
+        "default": "CurrenChan",
+        "ko": "카렌짱",
+        "ja": "カレンチャン",
+        "en": "Curren Chan",
+      "imageSrc": "/img/umaimage/CurrenChan/main.png",
+      "id": 38
+    },
+    {
+        "default": "KawakamiPrincess",
+        "ko": "카와카미 프린세스",
+        "ja": "カワカミプリンセス",
+        "en": "Kawakami Princess",
+      "imageSrc": "/img/umaimage/KawakamiPrincess/main.png",
+      "id": 39
+    },
+    {
+        "default": "GoldCity",
+        "ko": "골드 시티",
+        "ja": "ゴールドシチー",
+        "en": "Gold City",
+      "imageSrc": "/img/umaimage/GoldCity/main.png",
+      "id": 40
+    },
+    {
+        "default": "SakuraBakushinO",
+        "ko": "사쿠라 바쿠신 오",
+        "ja": "サクラバクシンオー",
+        "en": "Sakura Bakushin O",
+      "imageSrc": "/img/umaimage/SakuraBakushinO/main.png",
+      "id": 41
+    },
+    {
+        "default": "SeekingThePearl",
+        "ko": "시킹 더 펄",
+        "ja": "シーキングザパール",
+        "en": "Seeking the Pearl",
+      "imageSrc": "/img/umaimage/SeekingThePearl/main.png",
+      "id": 42
+    },
+    {
+        "default": "ShinkoWindy",
+        "ko": "신코 윈디",
+        "ja": "シンコウウインディ",
+        "en": "Shinko Windy",
+      "imageSrc": "/img/umaimage/ShinkoWindy/main.png",
+      "id": 43
+    },
+    {
+        "default": "SweepTosho",
+        "ko": "스윕 토쇼",
+        "ja": "スイープトウショウ",
+        "en": "Sweep Tosho",
+      "imageSrc": "/img/umaimage/SweepTosho/main.png",
+      "id": 44
+    },
+    {
+        "default": "SuperCreek",
+        "ko": "슈퍼 크릭",
+        "ja": "スーパークリーク",
+        "en": "Super Creek",
+      "imageSrc": "/img/umaimage/SuperCreek/main.png",
+      "id": 45
+    },
+    {
+        "default": "SmartFalcon",
+        "ko": "스마트 팔콘",
+        "ja": "スマートファルコン",
+        "en": "Smart Falcon",
+      "imageSrc": "/img/umaimage/SmartFalcon/main.png",
+      "id": 46
+    },
+    {
+        "default": "ZennoRobRoy",
+        "ko": "젠노 롭 로이",
+        "ja": "ゼンノロブロイ",
+        "en": "Zenno Rob Roy",
+      "imageSrc": "/img/umaimage/ZennoRobRoy/main.png",
+      "id": 47
+    },
+    {
+        "default": "TosenJordan",
+        "ko": "토센 조던",
+        "ja": "トーセンジョーダン",
+        "en": "Tosen Jordan",
+      "imageSrc": "/img/umaimage/TosenJordan/main.png",
+      "id": 48
+    },
+    {
+        "default": "NakayamaFesta",
+        "ko": "나카야마 페스타",
+        "ja": "ナカヤマフェスタ",
+        "en": "Nakayama Festa",
+      "imageSrc": "/img/umaimage/NakayamaFesta/main.png",
+      "id": 49
+    },
+    {
+        "default": "NaritaTaishin",
+        "ko": "나리타 타이신",
+        "ja": "ナリタタイシン",
+        "en": "Narita Taishin",
+      "imageSrc": "/img/umaimage/NaritaTaishin/main.png",
+      "id": 50
+    },
+    {
+        "default": "NishinoFlower",
+        "ko": "니시노 플라워",
+        "ja": "ニシノフラワー",
+        "en": "Nishino Flower",
+      "imageSrc": "/img/umaimage/NishinoFlower/main.png",
+      "id": 51
+    },
+    {
+        "default": "HaruUrara",
+        "ko": "하루 우라라",
+        "ja": "ハルウララ",
+        "en": "Haru Urara",
+      "imageSrc": "/img/umaimage/HaruUrara/main.png",
+      "id": 52
+    },
+    {
+        "default": "BambooMemory",
+        "ko": "뱀부 메모리",
+        "ja": "バンブーメモリー",
+        "en": "Bamboo Memory",
+      "imageSrc": "/img/umaimage/BambooMemory/main.png",
+      "id": 53
+    },
+    {
+        "default": "MarvelousSunday",
+        "ko": "마블러스 선데이",
+        "ja": "マーベラスサンデー",
+        "en": "Marvelous Sunday",
+      "imageSrc": "/img/umaimage/MarvelousSunday/main.png",
+      "id": 54
+    },
+    {
+        "default": "Matikanefukukitaru",
+        "ko": "마치카네 후쿠키타루",
+        "ja": "マチカネフクキタル",
+        "en": "Matikanefukukitaru",
+      "imageSrc": "/img/umaimage/Matikanefukukitaru/main.png",
+      "id": 55
+    },
+    {
+        "default": "MrCB",
+        "ko": "미스터 CB",
+        "ja": "ミスターシービー",
+        "en": "Mr C B",
+      "imageSrc": "/img/umaimage/MrCB/main.png",
+      "id": 56
+    },
+    {
+        "default": "MeishoDoto",
+        "ko": "메이쇼 도토",
+        "ja": "メイショウドトウ",
+        "en": "Meisho Doto",
+      "imageSrc": "/img/umaimage/MeishoDoto/main.png",
+      "id": 57
+    },
+    {
+        "default": "MejiroDober",
+        "ko": "메지로 도베르",
+        "ja": "メジロドーベル",
+        "en": "Mejiro Dober",
+      "imageSrc": "/img/umaimage/MejiroDober/main.png",
+      "id": 58
+    },
+    {
+        "default": "NiceNature",
+        "ko": "나이스 네이처",
+        "ja": "ナイスネイチャ",
+        "en": "Nice Nature",
+      "imageSrc": "/img/umaimage/NiceNature/main.png",
+      "id": 59
+    },
+    {
+        "default": "KingHalo",
+        "ko": "킹 헤일로",
+        "ja": "キングヘイロー",
+        "en": "King halo",
+      "imageSrc": "/img/umaimage/KingHalo/main.png",
+      "id": 60
+    },
+    {
+        "default": "Matikanetannhauser",
+        "ko": "마치카네 탄호이저",
+        "ja": "マチカネタンホイザ",
+        "en": "Matikanetannhauser",
+      "imageSrc": "/img/umaimage/Matikanetannhauser/main.png",
+      "id": 61
+    },
+    {
+        "default": "IkunoDictus",
+        "ko": "이쿠노 딕터스",
+        "ja": "イクノディクタス",
+        "en": "Ikuno Dictus",
+      "imageSrc": "/img/umaimage/IkunoDictus/main.png",
+      "id": 62
+    },
+    {
+        "default": "MejiroPalmer",
+        "ko": "메지로 파머",
+        "ja": "メジロパーマー",
+        "en": "Mejiro Palmer",
+      "imageSrc": "/img/umaimage/MejiroPalmer/main.png",
+      "id": 63
+    },
+    {
+        "default": "DaitakuHelios",
+        "ko": "다이타쿠 헬리오스",
+        "ja": "ダイタクヘリオス",
+        "en": "Daitaku Helios",
+      "imageSrc": "/img/umaimage/DaitakuHelios/main.png",
+      "id": 64
+    },
+    {
+        "default": "TwinTurbo",
+        "ko": "트윈 터보",
+        "ja": "ツインターボ",
+        "en": "Twin Turbo",
+      "imageSrc": "/img/umaimage/TwinTurbo/main.png",
+      "id": 65
+    },
+    {
+        "default": "SatonoDiamond",
+        "ko": "사토노 다이아몬드",
+        "ja": "サトノダイヤモンド",
+        "en": "Satono Diamond",
+      "imageSrc": "/img/umaimage/SatonoDiamond/main.png",
+      "id": 66
+    },
+    {
+        "default": "KitasanBlack",
+        "ko": "키타산 블랙",
+        "ja": "キタサンブラック",
+        "en": "Kitasan Black",
+      "imageSrc": "/img/umaimage/KitasanBlack/main.png",
+      "id": 67
+    },
+    {
+        "default": "MejiroArdan",
+        "ko": "메지로 아르당",
+        "ja": "メジロアルダン",
+        "en": "Mejiro Ardan",
+      "imageSrc": "/img/umaimage/MejiroArdan/main.png",
+      "id": 68
+    },
+    {
+        "default": "SakuraChiyonoO",
+        "ko": "사쿠라 치요노 오",
+        "ja": "サクラチヨノオー",
+        "en": "Sakura Chiyono O",
+      "imageSrc": "/img/umaimage/SakuraChiyonoO/main.png",
+      "id": 69
+    },
+    {
+        "default": "SiriusSymboli",
+        "ko": "시리우스 심볼리",
+        "ja": "シリウスシンボリ",
+        "en": "Sirius Symboli",
+      "imageSrc": "/img/umaimage/SiriusSymboli/main.png",
+      "id": 70
+    },
+    {
+        "default": "YaenoMuteki",
+        "ko": "야에노 무테키",
+        "ja": "ヤエノムテキ",
+        "en": "Yaeno Muteki",
+      "imageSrc": "/img/umaimage/YaenoMuteki/main.png",
+      "id": 71
+    },
+    {
+        "default": "BikoPegasus",
+        "ko": "비코 페가수스",
+        "ja": "ビコーペガサス",
+        "en": "Biko Pegasus",
+      "imageSrc": "/img/umaimage/BikoPegasus/main.png",
+      "id": 72
+    },
+    {
+        "default": "HayakawaTazuna",
+        "ko": "하야카와 타즈나",
+        "ja": "駿川たづな",
+        "en": "Hayakawa Tazuna",
+      "imageSrc": "/img/umaimage/HayakawaTazuna/main.png",
+      "id": 73
+    },
+    {
+        "default": "KiryuinAoi",
+        "ko": "키류인 아오이",
+        "ja": "桐生院葵",
+        "en": "Kiryuin Aoi",
+      "imageSrc": "/img/umaimage/KiryuinAoi/main.png",
+      "id": 74
+    },
+    {
+        "default": "KashimotoRiko",
+        "ko": "카시모토 리코",
+        "ja": "樫本理子",
+        "en": "Kashimoto Riko",
+      "imageSrc": "/img/umaimage/KashimotoRiko/main.png",
+      "id": 75
+    },
+    {
+        "default": "MejiroBright",
+        "ko": "메지로 브라이트",
+        "ja": "メジロブライト",
+        "en": "Mejiro Bright",
+      "imageSrc": "/img/umaimage/MejiroBright/main.png",
+      "id": 76
+    },
+    {
+        "default": "AnshinzawaSasami",
+        "ko": "안신자와 사사미",
+        "ja": "安心沢刺々美",
+        "en": "Anshinzawa Sasami",
+      "imageSrc": "/img/umaimage/AnshinzawaSasami/main.png",
+      "id": 77
+    },
+    {
+        "default": "NaritaTopRoad",
+        "ko": "나리타 탑 로드",
+        "ja": "ナリタトップロード",
+        "en": "NaritaTopRoad",
+      "imageSrc": "/img/umaimage/NaritaTopRoad/main.png",
+      "id": 78
+    },
+    {
+        "default": "SakuraLaurel",
+        "ko": "사쿠라 로렐",
+        "ja": "サクラローレル",
+        "en": "Sakura Laurel",
+      "imageSrc": "/img/umaimage/SakuraLaurel/main.png",
+      "id": 79
+    },
+    {
+        "default": "YamaninZephyr",
+        "ko": "야마닌 제퍼",
+        "ja": "ヤマニンゼファー",
+        "en": "Yamanin Zephyr",
+      "imageSrc": "/img/umaimage/YamaninZephyr/main.png",
+      "id": 80
+    },
+    {
+        "default": "AstonMachan",
+        "ko": "애스턴 마짱",
+        "ja": "アストンマーチャン",
+        "en": "Aston Machan",
+      "imageSrc": "/img/umaimage/AstonMachan/main.png",
+      "id": 81
+    },
+    {
+        "default": "LittleCocon",
+        "ko": "리틀 코콘",
+        "ja": "リトルココン",
+        "en": "Little Cocon",
+      "imageSrc": "/img/umaimage/LittleCocon/main.png",
+      "id": 82
+    },
+    {
+        "default": "BitterGlasse",
+        "ko": "비터 글라세",
+        "ja": "ビターグラッセ",
+        "en": "Bitter Glasse",
+      "imageSrc": "/img/umaimage/BitterGlasse/main.png",
+      "id": 83
+    },
+    {
+        "default": "TsurumaruTsuyoshi",
+        "ko": "츠루마루 츠요시",
+        "ja": "ツルマルツヨシ",
+        "en": "Tsurumaru Tsuyoshi",
+      "imageSrc": "/img/umaimage/TsurumaruTsuyoshi/main.png",
+      "id": 84
+    },
+    {
+        "default": "SymboliKrisS",
+        "ko": "심볼리 크리스 에스",
+        "ja": "シンボリクリスエス",
+        "en": "Symboli Kris S",
+      "imageSrc": "/img/umaimage/SymboliKrisS/main.png",
+      "id": 85
+    },
+    {
+        "default": "TaninoGimlet",
+        "ko": "타니노 김렛",
+        "ja": "タニノギムレット",
+        "en": "Tanino Gimlet",
+      "imageSrc": "/img/umaimage/TaninoGimlet/main.png",
+      "id": 86
+    },
+    {
+        "default": "CopanoRickey",
+        "ko": "코파노 리키",
+        "ja": "コパノリッキー",
+        "en": "Copano Rickey",
+      "imageSrc": "/img/umaimage/CopanoRickey/main.png",
+      "id": 87
+    },
+    {
+        "default": "AkasakaMisato",
+        "ko": "아카사카 미사토",
+        "ja": "赤坂美聡",
+        "en": "Akasaka Misato",
+      "imageSrc": "/img/umaimage/AkasakaMisato/main.png",
+      "id": 88
+    },
+    {
+        "default": "HosoeJunko",
+        "ko": "호소에 쥰코",
+        "ja": "細江純子",
+        "en": "Hosoe Junko",
+      "imageSrc": "/img/umaimage/HosoeJunko/main.png",
+      "id": 89
+    },
+    {
+        "default": "HokkoTarumae",
+        "ko": "홋코 타루마에",
+        "ja": "ホッコータルマエ",
+        "en": "HokkoTarumae",
+      "imageSrc": "/img/umaimage/HokkoTarumae/main.png",
+      "id": 90
+    },
+    {
+        "default": "WonderAcute",
+        "ko": "원더 어큐트",
+        "ja": "ワンダーアキュート",
+        "en": "Wonder Acute",
+      "imageSrc": "/img/umaimage/WonderAcute/main.png",
+      "id": 91
+    },
+    {
+        "default": "DaringTact",
+        "ko": "데어링 택트",
+        "ja": "デアリングタクト",
+        "en": "Daring Tact",
+      "imageSrc": "/img/umaimage/DaringTact/main.png",
+      "id": 92
+    },
+    {
+        "default": "LightHello",
+        "ko": "라이트 헬로",
+        "ja": "ライトハロー",
+        "en": "Light Hello",
+      "imageSrc": "/img/umaimage/LightHello/main.png",
+      "id": 93
+    },
+    {
+        "default": "DaiichiRuby",
+        "ko": "다이이치 루비",
+        "ja": "ダイイチルビー",
+        "en": "Daiichi Ruby",
+      "imageSrc": "/img/umaimage/DaiichiRuby/main.png",
+      "id": 94
+    },
+    {
+        "default": "KSMiracle",
+        "ko": "케이에스 미라클",
+        "ja": "ケイエスミラクル",
+        "en": "K S Miracle",
+      "imageSrc": "/img/umaimage/KSMiracle/main.png",
+      "id": 95
+    },
+    {
+        "default": "SatonoCrown",
+        "ko": "사토노 크라운",
+        "ja": "サトノクラウン",
+        "en": "Satono Crown",
+      "imageSrc": "/img/umaimage/SatonoCrown/main.png",
+      "id": 96
+    },
+    {
+        "default": "MejiroRamonu",
+        "ko": "메지로 라모누",
+        "ja": "メジロラモーヌ ",
+        "en": "Mejiro Ramonu",
+      "imageSrc": "/img/umaimage/MejiroRamonu/main.png",
+      "id": 97
+    },
+    {
+        "default": "ChevalGrand",
+        "ko": "슈발 그랑",
+        "ja": "シュヴァルグラン ",
+        "en": "Cheval Grand",
+      "imageSrc": "/img/umaimage/ChevalGrand/main.png",
+      "id": 98
+    },
+    {
+        "default": "JunglePocket",
+        "ko": "정글 포켓",
+        "ja": "ジャングルポケット",
+        "en": "Jungle Pocket",
+      "imageSrc": "/img/umaimage/JunglePocket/main.png",
+      "id": 99
+    },
+    {
+        "default": "KatsuragiAce",
+        "ko": "카츠라기 에이스",
+        "ja": "カツラギエース ",
+        "en": "Katsuragi Ace",
+      "imageSrc": "/img/umaimage/KatsuragiAce/main.png",
+      "id": 100
+    },
+    {
+        "default": "NeoUniverse",
+        "ko": "네오 유니버스",
+        "ja": "ネオユニヴァース",
+        "en": "Neo Universe",
+      "imageSrc": "/img/umaimage/NeoUniverse/main.png",
+      "id": 101
+    },
+    {
+        "default": "HishiMiracle",
+        "ko": "히시 미라클",
+        "ja": "ヒシミラクル",
+        "en": "Hishi Miracle",
+      "imageSrc": "/img/umaimage/HishiMiracle/main.png",
+      "id": 102
+    },
+    {
+        "default": "TapDanceCity",
+        "ko": "탭 댄스 시티",
+        "ja": "タップダンスシチー",
+        "en": "Tap Dance City",
+      "imageSrc": "/img/umaimage/TapDanceCity/main.png",
+      "id": 103
+    },
+    {
+        "default": "DarleyArabian",
+        "ko": "달리 아라비안",
+        "ja": "ダーレーアラビアン",
+        "en": "Darley Arabian",
+      "imageSrc": "/img/umaimage/DarleyArabian/main.png",
+      "id": 104
+    },
+    {
+        "default": "GodolphinBarb",
+        "ko": "고돌핀 바브",
+        "ja": "ゴドルフィンバルブ",
+        "en": "Godolphin Barb",
+      "imageSrc": "/img/umaimage/GodolphinBarb/main.png",
+      "id": 105
+    },
+    {
+        "default": "ByerleyTurk",
+        "ko": "바이얼리 터크",
+        "ja": "バイアリーターク",
+        "en": "Byerley Turk",
+      "imageSrc": "/img/umaimage/ByerleyTurk/main.png",
+      "id": 106
+    },
+    {
+        "default": "SatakeMei",
+        "ko": "사타케 메이",
+        "ja": "佐岳メイ",
+        "en": "Satake Mei",
+      "imageSrc": "/img/umaimage/SatakeMei/main.png",
+      "id": 107
+    },
+    {
+        "default": "VenusPark",
+        "ko": "베누스 파크",
+        "ja": "ヴェニュスパーク",
+        "en": "Venus Park",
+      "imageSrc": "/img/umaimage/VenusPark/main.png",
+      "id": 108
+    },
+    {
+        "default": "Rigantona",
+        "ko": "리간토나",
+        "ja": "リガントーナ",
+        "en": "Rigantona",
+      "imageSrc": "/img/umaimage/Rigantona/main.png",
+      "id": 109
+    },
+    {
+        "default": "SoundsOfEarth",
+        "ko": "사운즈 오브 어스 ",
+        "ja": "サウンズオブアース",
+        "en": "SoundsOfEarth",
+      "imageSrc": "/img/umaimage/SoundsOfEarth/main.png",
+      "id": 110
+    },
+    {
+        "default": "NorthFlight",
+        "ko": "노스 플라이트",
+        "ja": "ノースフライト",
+        "en": "North Flight",
+      "imageSrc": "/img/umaimage/NorthFlight/main.png",
+      "id": 111
+    },
+    {
+        "default": "Duramente",
+        "ko": "두라멘테",
+        "ja": "ドゥラメンテ",
+        "en": "Duramente",
+      "imageSrc": "/img/umaimage/Duramente/main.png",
+      "id": 112
+    },
+    {
+        "default": "Verxina",
+        "ko": "비르시나",
+        "ja": "ヴィルシーナ",
+        "en": "Verxina",
+      "imageSrc": "/img/umaimage/Verxina/main.png",
+      "id": 113
+    },
+    {
+        "default": "Vivlos",
+        "ko": "비블로스",
+        "ja": "ヴィブロス",
+        "en": "Vivlos",
+      "imageSrc": "/img/umaimage/Vivlos/main.png",
+      "id": 114
+    },
+    {
+        "default": "SamsonBig",
+        "ko": "삼손 빅",
+        "ja": "サムソンビッグ",
+        "en": "Samson Big",
+      "imageSrc": "/img/umaimage/SamsonBig/main.png",
+      "id": 115
+    }
+  ]
+  
+}
