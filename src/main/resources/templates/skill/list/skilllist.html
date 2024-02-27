@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layout/default_layout">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout/default_layout">
 <th:block layout:fragment="content">
     <div id="load">
         <img src="/img/loading.gif" alt="loading">
@@ -7,22 +8,21 @@
     <div id='wrapper' class="d-flex justify-content-center align-items-center" ondragstart="return false">
         <div class="mainPage" style="margin:0 auto;">
             <h1 style="text-align: center; padding-top: 1rem; padding-bottom: 1rem;" th:text="#{menu2}"></h1>
-            <table id="skillTable" class="table">
-                <thead></thead>
-                <tbody>
-                <tr th:each="skill : ${skills}" align="center" valign="middle">
-                    <td>
-                        <span class="fi fi-jp border m-0 p-0" style="display:inline-block; aspect-ratio: auto; height: 1rem;"></span>
-                        <span class="px-1"></span>[[${skill.jpn_name}]] <br>
-                        <span class="fi fi-kr border m-0 p-0" style="display:inline-block; aspect-ratio: auto; height: 1rem;"></span>
-                        <span class="px-1"></span>[[${skill.kor_name}]] <br>
-                    </td>
-                    <td style="width: 50%">
-                        <img th:src="@{${skill.img}}" alt="" width="auto" height="64px">
-                    </td>
+            <div id="skillList" class="container d-flex align-content-start flex-wrap p-0">
+                <tr th:each="skill : ${skills}"
+                    align="center" valign="middle">
+                    <div class="card skillbox border-0 none-select row align-items-start"
+                         th:style="'margin:0.2vw;'">
+                        <div class="col">
+                            <img class="card-img" style="width: auto; height: 8vw;" th:src="@{${skill.img}}" alt="">
+                        </div>
+                        <div class="col card-body p-1 m-0">
+                            <p class="card-title p-0 m-0" style="font-size: .90vw;">[[${skill.jpn_name}]]</p>
+                            <p class="card-text p-0 m-0" style="font-size: .85vw;">[[${skill.kor_name}]]</p>
+                        </div>
+                    </div>
                 </tr>
-                </tbody>
-            </table>
+            </div>
         </div>
     </div>
 </th:block>
