@@ -1,62 +1,41 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layout/default_layout">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout/default_layout">
 <th:block layout:fragment="content">
     <div id="load">
         <img src="/img/loading.gif" alt="loading">
     </div>
     <div id='wrapper' class="d-flex justify-content-center align-items-center" ondragstart="return false">
         <div class="mainPage" style="margin:0 auto;">
-            <h1 style="text-align: center; padding-top: 1rem; padding-bottom: 1rem;" th:text="#{menu1}"></h1>
-            <div class="dropdown-center" align="center" style="padding-bottom: 1rem;">
-                <button class="btn btn-outline-dark dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" th:text="#{orderby}"></button>
-                <ul class="dropdown-menu rounded-0" aria-labelledby="dropdownMenuButton1">
-                    <li>
-                        <a class="dropdown-item rounded-0" href="./release" th:text="#{o_release}"></a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item rounded-0" href="./release_r" th:text="#{o_release_r}"></a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item rounded-0" href="./ascjpn" th:text="#{o_ascjpn}"></a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item rounded-0" href="./descjpn" th:text="#{o_descjpn}"></a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item rounded-0" href="./asckor" th:text="#{o_asckor}"></a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item rounded-0" href="./desckor" th:text="#{o_desckor}"></a>
-                    <li>
-                        <a class="dropdown-item rounded-0" href="./asceng" th:text="#{o_asceng}"></a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item rounded-0" href="./desceng" th:text="#{o_desceng}"></a>
-                    </li>
-                </ul>
-                <div th:text="#{now}+':'+${nowsort}"></div>
-            </div>
-            <table id="umaTable" class="table">
-                <thead></thead>
-                <tbody>
-                <tr th:each="umamusume : ${umamusumes}" align="center" valign="middle">
-                    <td>
-                        <span class="fi fi-jp border m-0 p-0" style="display:inline-block; aspect-ratio: auto; height: 1rem;"></span>
-                        <span class="px-1"></span>[[${umamusume.jpn_name}]] <br>
-                        <span class="fi fi-kr border m-0 p-0" style="display:inline-block; aspect-ratio: auto; height: 1rem;"></span>
-                        <span class="px-1"></span>[[${umamusume.kor_name}]] <br>
-                        <span class="fi fi-gb border m-0 p-0" style="display:inline-block; aspect-ratio: auto; height: 1rem;"></span>
-                        <span class="px-1"></span>[[${umamusume.eng_name}]]
-                    </td>
-                    <td>
-                        <p>
-                            <img th:src="@{${umamusume.img + 'profile.png'}}" alt="" width="auto" height="209px">
-                            <img th:src="@{${umamusume.img + 'stand.png'}}" alt="" style="display: none">
-                        </p>
-                    </td>
+            <h1 style="text-align: center; padding-top: 1rem; padding-bottom: 1rem; user-select: none !important;"
+                th:text="#{menu1}"></h1>
+            <div id="umaList" class="container d-flex align-content-start flex-wrap p-0">
+                <tr th:each="umamusume : ${umamusumes}"
+                    th:style="'--main-color:' + ${umamusume.main_color} + '; --sub-color:' + ${umamusume.sub_color} + ';'"
+                    align="center" valign="middle">
+                    <div class="break" th:if="${umamusume.name == 'HappyMeek'}">
+                    </div>
+                    <div class="card charbox rounded-0 none-select position-relative"
+                         th:style="'border-color:' + ${umamusume.sub_color} + '; margin:0.2vw;'">
+                            <img class="position-relative p-0 m-0" th:src="@{${umamusume.img + umamusume.name + '_list.png'}}"
+                                 alt=""
+                                 th:style="'width:100%; height:100%; object-fit: cover; background: linear-gradient(90deg, '+ ${umamusume.main_color} + ' 0%, '+ ${umamusume.main_color} + ' 85%, rgba(255,255,255,1) 85%, rgba(255,255,255,1) 100%);'">
+                            <div class="py-1 position-absolute end-0 side-text"
+                                 th:style="'writing-mode: vertical-rl; color: ' + ${umamusume.main_color} + '; font-size: .90vw;'">
+                                [[${umamusume.eng_name}]]
+                            </div>
+                        <div class="position-absolute p-0 m-0">
+                            <img class="position-relative p-0 m-0" th:src="@{${umamusume.img + umamusume.name + '_list.png'}}"
+                                 alt=""
+                                 th:style="'width:100%; height:100%; object-fit: cover; background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 85%, rgba(255,255,255,1) 85%, rgba(255,255,255,1) 100%);'">
+                        </div>
+                        <div class="card-body p-1 m-0" th:style="'backgorund: white !important;'">
+                            <p class="card-title p-0 m-0" style="font-size: .90vw;">[[${umamusume.jpn_name}]]</p>
+                            <p class="card-text p-0 m-0" style="font-size: .85vw;">[[${umamusume.kor_name}]]</p>
+                        </div>
+                    </div>
                 </tr>
-                </tbody>
-            </table>
+            </div>
         </div>
     </div>
 </th:block>
