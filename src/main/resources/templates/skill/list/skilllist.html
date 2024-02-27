@@ -5,23 +5,184 @@
     <div id="load">
         <img src="/img/loading.gif" alt="loading">
     </div>
-    <div id='wrapper' class="d-flex justify-content-center align-items-center" ondragstart="return false">
+    <div id='wrapper' class="d-flex justify-content-center align-items-start" ondragstart="return false">
+
         <div class="mainPage" style="margin:0 auto;">
-            <h1 style="text-align: center; padding-top: 1rem; padding-bottom: 1rem;" th:text="#{menu2}"></h1>
-            <div id="skillList" class="container d-flex align-content-start flex-wrap p-0">
+            <h1 style="text-align: center; padding-top: 1rem; padding-bottom: 0rem;" th:text="#{menu2}"></h1>
+            <div style="text-align: center;" class="mt-0 mb-2">
+                <input type="text" class="form-text rounded-1" id="skill-search" size="30" onkeyup="skillsearch()">
+            </div>
+            <div id="skillList" class="container d-flex justify-content-between flex-wrap p-0 mb-2">
                 <tr th:each="skill : ${skills}"
                     align="center" valign="middle">
-                    <div class="card skillbox border-0 none-select row align-items-start"
-                         th:style="'margin:0.2vw;'">
-                        <div class="col">
-                            <img class="card-img" style="width: auto; height: 8vw;" th:src="@{${skill.img}}" alt="">
+
+                    <div class="card skillbox shadow-sm rounded-1 none-select skill_common"
+                         th:style="'margin:0.2vw; width: 49.4%; height: auto; cursor:pointer;'"
+                         th:if="${skill.type} == '1' or ${skill.type} == '4' or ${skill.type} == '5'"
+                         th:id="'skill_no' + ${skill.id}"
+                         th:onclick="skillModalById([[${skill.id}]]);"
+                         data-toggle="modal" data-target="#skillmodal">
+                        <div class="row g-0 align-items-center">
+                            <div class="col-2">
+                                <img class="card-img p-0 m-1" th:src="@{${skill.img}}" alt=""
+                                     style="width: auto; height: 6vw; min-height: 64px" th:id="'img'+${skill.id}">
+                            </div>
+                            <div class="col">
+                                <div class="card-body" th:style="'backgorund: white !important;'">
+                                    <p class="card-title p-0 m-0" valign="middle" style="font-size: .95em;" th:id="'jpn_name'+${skill.id}">
+                                        <span class="fi fi-jp border m-0 p-0"
+                                              style="display:inline-block; aspect-ratio: auto; height: 1rem;"></span>
+                                        [[${skill.jpn_name}]]</p>
+                                    <p class="card-text p-0 m-0" valign="middle" style="font-size: .95em;" th:id="'kor_name'+${skill.id}">
+                                        <span class="fi fi-kr border m-0 p-0"
+                                              style="display:inline-block; aspect-ratio: auto; height: 1rem;"></span>
+                                        [[${skill.kor_name}]]</p>
+                                    <p class="card-text search-word p-0 m-0" valign="middle" style="display: none;">
+                                        [[${skill.jpn_name}]] [[${skill.kor_name}]] [[${skill.tags}]] </p>
+                                    <p class="card-text p-0 m-0" valign="middle" style="display: none;" th:id="'jpn_effect'+${skill.id}">
+                                        [[${skill.jpn_effect}]]</p>
+                                    <p class="card-text p-0 m-0" valign="middle" style="display: none;" th:id="'kor_effect'+${skill.id}">
+                                        [[${skill.kor_effect}]]</p>
+                                    <p class="card-text p-0 m-0" valign="middle" style="display: none;" th:id="'prec1_'+${skill.id}">
+                                        [[${skill.precondition1}]]</p>
+                                    <p class="card-text p-0 m-0" valign="middle" style="display: none;" th:id="'c1_'+${skill.id}">
+                                        [[${skill.condition1}]]</p>
+                                    <p class="card-text p-0 m-0" valign="middle" style="display: none;" th:id="'prec2_'+${skill.id}">
+                                        [[${skill.precondition2}]]</p>
+                                    <p class="card-text p-0 m-0" valign="middle" style="display: none;" th:id="'c2_'+${skill.id}">
+                                        [[${skill.condition2}]]</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col card-body p-1 m-0">
-                            <p class="card-title p-0 m-0" style="font-size: .90vw;">[[${skill.jpn_name}]]</p>
-                            <p class="card-text p-0 m-0" style="font-size: .85vw;">[[${skill.kor_name}]]</p>
+                    </div>
+                    <div class="card skillbox shadow-sm rounded-1 none-select skill_rare"
+                         th:style="'margin:0.2vw; width: 49.4%; height: auto;'"
+                         th:if="${skill.type} == '2'"
+                         th:onclick="skillModalById([[${skill.id}]]);"
+                         data-toggle="modal" data-target="#skillmodal">
+                        <div class="row g-0 align-items-center">
+                            <div class="col-2">
+                                <img class="card-img p-0 m-1" th:src="@{${skill.img}}" alt=""
+                                     style="width: auto; height: 6vw; min-height: 64px" th:id="'img'+${skill.id}">
+                            </div>
+                            <div class="col">
+                                <div class="card-body" th:style="'backgorund: white !important;'">
+                                    <p class="card-title p-0 m-0" valign="middle" style="font-size: .95em;" th:id="'jpn_name'+${skill.id}">
+                                        <span class="fi fi-jp border m-0 p-0"
+                                              style="display:inline-block; aspect-ratio: auto; height: 1rem;"></span>
+                                        [[${skill.jpn_name}]]</p>
+                                    <p class="card-text p-0 m-0" valign="middle" style="font-size: .95em;" th:id="'kor_name'+${skill.id}">
+                                        <span class="fi fi-kr border m-0 p-0"
+                                              style="display:inline-block; aspect-ratio: auto; height: 1rem;"></span>
+                                        [[${skill.kor_name}]]</p>
+                                    <p class="card-text search-word p-0 m-0" valign="middle" style="display: none;">
+                                        [[${skill.jpn_name}]] [[${skill.kor_name}]] [[${skill.tags}]] </p>
+                                    <p class="card-text p-0 m-0" valign="middle" style="display: none;" th:id="'jpn_effect'+${skill.id}">
+                                        [[${skill.jpn_effect}]]</p>
+                                    <p class="card-text p-0 m-0" valign="middle" style="display: none;" th:id="'kor_effect'+${skill.id}">
+                                        [[${skill.kor_effect}]]</p>
+                                    <p class="card-text p-0 m-0" valign="middle" style="display: none;" th:id="'prec1_'+${skill.id}">
+                                        [[${skill.precondition1}]]</p>
+                                    <p class="card-text p-0 m-0" valign="middle" style="display: none;" th:id="'c1_'+${skill.id}">
+                                        [[${skill.condition1}]]</p>
+                                    <p class="card-text p-0 m-0" valign="middle" style="display: none;" th:id="'prec2_'+${skill.id}">
+                                        [[${skill.precondition2}]]</p>
+                                    <p class="card-text p-0 m-0" valign="middle" style="display: none;" th:id="'c2_'+${skill.id}">
+                                        [[${skill.condition2}]]</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card skillbox shadow-sm rounded-1 none-select skill_own"
+                         th:style="'margin:0.2vw; width: 49.4%; height: auto;'"
+                         th:if="${skill.type} == '3'"
+                         th:onclick="skillModalById([[${skill.id}]]);"
+                         data-toggle="modal" data-target="#skillmodal">
+                        <div class="row g-0 align-items-center">
+                            <div class="col-2">
+                                <img class="card-img p-0 m-1" th:src="@{${skill.img}}" alt=""
+                                     style="width: auto; height: 6vw; min-height: 64px" th:id="'img'+${skill.id}">
+                            </div>
+                            <div class="col">
+                                <div class="card-body" th:style="'backgorund: white !important;'">
+                                    <p class="card-title p-0 m-0" valign="middle" style="font-size: .95em;" th:id="'jpn_name'+${skill.id}">
+                                        <span class="fi fi-jp border m-0 p-0"
+                                              style="display:inline-block; aspect-ratio: auto; height: 1rem;"></span>
+                                        [[${skill.jpn_name}]]</p>
+                                    <p class="card-text p-0 m-0" valign="middle" style="font-size: .95em;" th:id="'kor_name'+${skill.id}">
+                                        <span class="fi fi-kr border m-0 p-0"
+                                              style="display:inline-block; aspect-ratio: auto; height: 1rem;"></span>
+                                        [[${skill.kor_name}]]</p>
+                                    <p class="card-text search-word p-0 m-0" valign="middle" style="display: none;">
+                                        [[${skill.jpn_name}]] [[${skill.kor_name}]] [[${skill.tags}]] </p>
+                                    <p class="card-text p-0 m-0" valign="middle" style="display: none;" th:id="'jpn_effect'+${skill.id}">
+                                        [[${skill.jpn_effect}]]</p>
+                                    <p class="card-text p-0 m-0" valign="middle" style="display: none;" th:id="'kor_effect'+${skill.id}">
+                                        [[${skill.kor_effect}]]</p>
+                                    <p class="card-text p-0 m-0" valign="middle" style="display: none;" th:id="'prec1_'+${skill.id}">
+                                        [[${skill.precondition1}]]</p>
+                                    <p class="card-text p-0 m-0" valign="middle" style="display: none;" th:id="'c1_'+${skill.id}">
+                                        [[${skill.condition1}]]</p>
+                                    <p class="card-text p-0 m-0" valign="middle" style="display: none;" th:id="'prec2_'+${skill.id}">
+                                        [[${skill.precondition2}]]</p>
+                                    <p class="card-text p-0 m-0" valign="middle" style="display: none;" th:id="'c2_'+${skill.id}">
+                                        [[${skill.condition2}]]</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card skillbox shadow-sm rounded-1 none-select skill_evol"
+                         th:style="'margin:0.2vw; width: 49.4%; height: auto;'"
+                         th:if="${skill.type} == '6'"
+                         th:onclick="skillModalById([[${skill.id}]]);"
+                         data-toggle="modal" data-target="#skillmodal">
+                        <div class="row g-0 align-items-center">
+                            <div class="col-2">
+                                <img class="card-img p-0 m-1" th:src="@{${skill.img}}" alt=""
+                                     style="width: auto; height: 6vw; min-height: 64px" th:id="'img'+${skill.id}">
+                            </div>
+                            <div class="col">
+                                <div class="card-body" th:style="'backgorund: white !important;'">
+                                    <p class="card-title p-0 m-0" valign="middle" style="font-size: .95em;" th:id="'jpn_name'+${skill.id}">
+                                        <span class="fi fi-jp border m-0 p-0"
+                                              style="display:inline-block; aspect-ratio: auto; height: 1rem;"></span>
+                                        [[${skill.jpn_name}]]</p>
+                                    <p class="card-text p-0 m-0" valign="middle" style="font-size: .95em;" th:id="'kor_name'+${skill.id}">
+                                        <span class="fi fi-kr border m-0 p-0"
+                                              style="display:inline-block; aspect-ratio: auto; height: 1rem;"></span>
+                                        [[${skill.kor_name}]]</p>
+                                    <p class="card-text search-word p-0 m-0" valign="middle" style="display: none;">
+                                        [[${skill.jpn_name}]] [[${skill.kor_name}]] [[${skill.tags}]] </p>
+                                    <p class="card-text p-0 m-0" valign="middle" style="display: none;" th:id="'jpn_effect'+${skill.id}">
+                                        [[${skill.jpn_effect}]]</p>
+                                    <p class="card-text p-0 m-0" valign="middle" style="display: none;" th:id="'kor_effect'+${skill.id}">
+                                        [[${skill.kor_effect}]]</p>
+                                    <p class="card-text p-0 m-0" valign="middle" style="display: none;" th:id="'prec1_'+${skill.id}">
+                                        [[${skill.precondition1}]]</p>
+                                    <p class="card-text p-0 m-0" valign="middle" style="display: none;" th:id="'c1_'+${skill.id}">
+                                        [[${skill.condition1}]]</p>
+                                    <p class="card-text p-0 m-0" valign="middle" style="display: none;" th:id="'prec2_'+${skill.id}">
+                                        [[${skill.precondition2}]]</p>
+                                    <p class="card-text p-0 m-0" valign="middle" style="display: none;" th:id="'c2_'+${skill.id}">
+                                        [[${skill.condition2}]]</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </tr>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal none-select" tabindex="-1" id="skillmodal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="skillname">SkillName</h5>
+                </div>
+                <div class="modal-body" id="skilldesc" style="word-break:keep-all;">SkillDesc</div>
+                <hr class="m-0">
+                <div class="modal-body" id="skillcondition" style="word-break:keep-all;">SkillCondition</div>
             </div>
         </div>
     </div>

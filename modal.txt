@@ -1,0 +1,7 @@
+
+<div class="modal">
+    <div class="modalBox"></div>
+</div>
+<div class="modal" id="lang">
+    <div class="modalBox" id="langBox"></div>
+</div>

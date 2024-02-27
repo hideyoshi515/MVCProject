@@ -20,11 +20,16 @@ class Skill {
     lateinit var jpn_effect:String
     lateinit var kor_effect:String
     lateinit var tags:String
-    lateinit var jpn_condition:String
-    lateinit var kor_condition:String
     lateinit var jpn_evol:String
     lateinit var kor_evol:String
     lateinit var img:String
+    lateinit var color:String
+    lateinit var type:Integer
+    lateinit var skillcode:Integer
+    lateinit var precondition1:String
+    lateinit var condition1:String
+    lateinit var precondition2:String
+    lateinit var condition2:String
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

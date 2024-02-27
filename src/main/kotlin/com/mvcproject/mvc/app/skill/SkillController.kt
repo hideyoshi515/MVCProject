@@ -23,7 +23,7 @@ class SkillController(private val skillRepository: SkillRepository) {
 
     @RequestMapping("/skill/list")
     fun getToIndex(model: Model): String {
-        val skill = skillRepository.showSkill()
+        val skill = skillRepository.showSkillByTypeCode()
         model.addAttribute("skills", skill)
         return "/skill/list/skilllist.html"
     }

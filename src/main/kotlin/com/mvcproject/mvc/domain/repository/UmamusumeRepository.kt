@@ -18,7 +18,7 @@ interface UmamusumeRepository : JpaRepository<Umamusume, Long> {
      * 結果はキー "releasedate" でキャッシュされます。
      */
     @Cacheable("releasedate")
-    @Query("select u From Umamusume u")
+    @Query("Select u From Umamusume u")
     fun showUmamusume(): List<Umamusume>
 
     /**
@@ -26,7 +26,7 @@ interface UmamusumeRepository : JpaRepository<Umamusume, Long> {
      * 結果はキー "releasedateReverse" でキャッシュされます。
      */
     @Cacheable("releasedateReverse")
-    @Query("select u From Umamusume u order by u.id Desc")
+    @Query("Select u From Umamusume u Order By u.id Desc")
     fun showUmamusumeReverse(): List<Umamusume>
 
     /**
@@ -34,7 +34,7 @@ interface UmamusumeRepository : JpaRepository<Umamusume, Long> {
      * 結果はキー "asckor" でキャッシュされます。
      */
     @Cacheable("asckor")
-    @Query("select u From Umamusume u order by u.kor_name ASC")
+    @Query("Select u From Umamusume u Order By u.kor_name ASC")
     fun showUmamusumeAscKor(): List<Umamusume>
 
     /**
@@ -42,7 +42,7 @@ interface UmamusumeRepository : JpaRepository<Umamusume, Long> {
      * 結果はキー "desckor" でキャッシュされます。
      */
     @Cacheable("desckor")
-    @Query("select u From Umamusume u order by u.kor_name DESC")
+    @Query("Select u From Umamusume u Order By u.kor_name DESC")
     fun showUmamusumeDescKor(): List<Umamusume>
 
     /**
@@ -50,7 +50,7 @@ interface UmamusumeRepository : JpaRepository<Umamusume, Long> {
      * 結果はキー "ascjpn" でキャッシュされます。
      */
     @Cacheable("ascjpn")
-    @Query("select u From Umamusume u order by u.jpn_name ASC")
+    @Query("Select u From Umamusume u Order By u.jpn_name ASC")
     fun showUmamusumeAscJpn(): List<Umamusume>
 
     /**
@@ -58,7 +58,7 @@ interface UmamusumeRepository : JpaRepository<Umamusume, Long> {
      * 結果はキー "descjpn" でキャッシュされます。
      */
     @Cacheable("descjpn")
-    @Query("select u From Umamusume u order by u.jpn_name DESC")
+    @Query("Select u From Umamusume u Order By u.jpn_name DESC")
     fun showUmamusumeDescJpn(): List<Umamusume>
 
     /**
@@ -66,7 +66,7 @@ interface UmamusumeRepository : JpaRepository<Umamusume, Long> {
      * 結果はキー "asceng" でキャッシュされます。
      */
     @Cacheable("asceng")
-    @Query("select u From Umamusume u order by u.eng_name ASC")
+    @Query("Select u From Umamusume u Order By u.eng_name ASC")
     fun showUmamusumeAscEng(): List<Umamusume>
 
     /**
@@ -74,7 +74,7 @@ interface UmamusumeRepository : JpaRepository<Umamusume, Long> {
      * 結果はキー "desceng" でキャッシュされます。
      */
     @Cacheable("desceng")
-    @Query("select u From Umamusume u order by u.eng_name DESC")
+    @Query("Select u From Umamusume u Order By u.eng_name DESC")
     fun showUmamusumeDescEng(): List<Umamusume>
 
     /**

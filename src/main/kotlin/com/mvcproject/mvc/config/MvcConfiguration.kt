@@ -39,14 +39,28 @@ class MvcConfiguration : WebMvcConfigurer {
     fun redirected(): String {
         return "redirected"
     }
+
     override fun addResourceHandlers(registry: ResourceHandlerRegistry) {
         registry
             .addResourceHandler("/static/**")
             .addResourceLocations("classpath:/static/")
             .setCachePeriod(3600)
     }
+
     @Bean
     fun cacheManager(): ConcurrentMapCacheManager {
-        return ConcurrentMapCacheManager("releasedate", "releasedateReverse","asckor", "desckor", "ascjpn", "descjpn", "asceng", "desceng","skills")
+        return ConcurrentMapCacheManager(
+            "releasedate",
+            "releasedateReverse",
+            "asckor",
+            "desckor",
+            "ascjpn",
+            "descjpn",
+            "asceng",
+            "desceng",
+            "skills",
+            "skillsTC",
+            "skillsC"
+        )
     }
 }
