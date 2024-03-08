@@ -60,7 +60,10 @@ class MvcConfiguration : WebMvcConfigurer {
             "desceng",
             "skills",
             "skillsTC",
-            "skillsC"
+            "skillsC",
+            "selectone",
+            "supportcard",
+            "supportcardChar"
         )
     }
 }

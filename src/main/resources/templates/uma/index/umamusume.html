@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout/default_layout">
+<th:block layout:fragment="content">
+    <div id="load">
+        <img src="/img/loading.gif" alt="loading">
+    </div>
+    <div id='wrapper' class="d-flex justify-content-center align-items-center" ondragstart="return false">
+        <div class="mainPage none-select" style="margin:0 auto;" th:each="umamusume : ${select}">
+            <div class="row m-0 p-0">
+                <div class="col-sm-4 m-0 p-0 border border-1 m" style="width: max(33%, 400px)">
+                    <div class="m-0 p-0" th:style="'height:15%; background:'+ ${umamusume.main_color} + ';'">
+                        <div class="d-flex align-items-center justify-content-center m-0 p-0"
+                             th:style="'color:white; height:100%; -webkit-text-stroke: 2px '+ ${umamusume.sub_color} + ';'">
+                            <p style="font-size: max(2vw,2rem);">[[${umamusume.jpn_name}]]</p>
+                        </div>
+                    </div>
+                    <div class="m-0 p-0" th:style="'height:70%; text-align:center'">
+                        <img class="img_fit"
+                             th:src="@{${'/img/umaimage/stand/chara_stand_' + umamusume.order + '_' + umamusume.order + '01.png'}}"
+                             style="width: 350px;">
+                    </div>
+                    <div class="m-0 p-0" th:style="'height:15%; background:'+ ${umamusume.sub_color} + ';'">
+                        <div class="d-flex align-items-center justify-content-center m-0 p-0"
+                             th:style="'color:white; height:100%; -webkit-text-stroke: 2px '+ ${umamusume.main_color} + ';'">
+                            <p style="font-size: max(2vw,2rem);">[[${umamusume.kor_name}]]</p>
+                        </div>
+                        <!--<img class="img_fit" th:src="@{${'/img/umaimage/chrname/gacha_chrname_' + umamusume.order + '_03.png'}}" >-->
+                    </div>
+                </div>
+                <div class="col m-0 p-0 border border-1" style="width: max(66%, 400px)">
+                </div>
+            </div>
+            <div class="d-flex justify-content-between flex-wrap m-0 p-0 border border-1">
+                <div class="umasupport d-flex align-items-center flex-wrap border border-1 m-0 p-0" style="width: calc(100%/2);"
+                     th:each="supportcard : ${support}">
+                    <div>
+                        <img class="umasupport_img"
+                                th:src="@{${'/img/umaimage/support/support_thumb_' + supportcard.id + '.png'}}"
+                                style="width: min(10vw,192px); aspect-ratio:1/1.3;">
+                    </div>
+                    <div>
+                        <div th:if="${supportcard.command_id} == '0'">
+                            <img
+                                    th:src="@{${'/img/umaimage/support/utx_ico_obtain_' + supportcard.command_id + supportcard.command_type + '.png'}}"
+                                    style="width: min(5vw,128px); aspect-ratio:1;">
+                            [[${supportcard.title}]]
+                        </div>
+                        <div th:unless="${supportcard.command_id} == '0'">
+                            <img
+                                    th:src="@{${'/img/umaimage/support/utx_ico_obtain_' + supportcard.command_id + '.png'}}"
+                                    style="width: min(5vw,128px); aspect-ratio:1;">
+                            [[${supportcard.title}]]
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</th:block>
+</html>

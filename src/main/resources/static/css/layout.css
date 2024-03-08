@@ -39,7 +39,11 @@ body {
 #wrapper {
     height: auto;
     min-height: calc(100vh - (61px + 2px) - (83px - 2px));
+    margin-left: auto;
+    margin-right: auto;
     padding-bottom: 0px;
+    padding-left: 16px;
+    padding-right: 16px;
     background: url(../img/bg_main.jpg) fixed 50% 0;
 }
 
@@ -111,7 +115,7 @@ footer {
 @media screen and (min-width: 992px) and (max-width: 1199px) {
 
     .mainPage {
-        min-width: 9920px;
+        min-width: 992px;
         max-width: 1200px;
     }
 
@@ -205,6 +209,14 @@ footer {
 
     .charbox > .card-body > .card-text {
         font-size: 14px !important;
+    }
+
+    .umasupport{
+        width: 100% !important;
+    }
+
+    .umasupport_img{
+        width: min(15vw,256px) !important;
     }
 
     .navbar {
@@ -322,7 +334,10 @@ footer {
     .navbar__links.active {
         display: flex;
     }
+}
 
+
+@media screen and (min-width: 734px) and (max-width: 783px) {
     .navbar__shortLoginBtn {
         display: block;
     }

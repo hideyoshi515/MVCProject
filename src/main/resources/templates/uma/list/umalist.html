@@ -15,17 +15,21 @@
                     align="center" valign="middle">
                     <div class="break" th:if="${umamusume.name == 'HappyMeek'}">
                     </div>
-                    <div class="card charbox rounded-0 none-select position-relative"
-                         th:style="'border-color:' + ${umamusume.sub_color} + '; margin:0.2vw;'">
-                            <img class="position-relative p-0 m-0" src="/img/umaimage/transparent_list.png" loading="lazy" decoding="async"
-                                 alt=""
-                                 th:style="'width:100%; height:100%; object-fit: cover; background: linear-gradient(90deg, '+ ${umamusume.main_color} + ' 0%, '+ ${umamusume.main_color} + ' 85%, rgba(255,255,255,1) 85%, rgba(255,255,255,1) 100%);'">
-                            <div class="py-1 position-absolute end-0 side-text"
-                                 th:style="'writing-mode: vertical-rl; color: ' + ${umamusume.main_color} + '; font-size: .90vw;'">
-                                [[${umamusume.eng_name}]]
-                            </div>
+                    <a class="card charbox rounded-0 none-select position-relative"
+                       th:style="'border-color:' + ${umamusume.sub_color} + '; margin:0.2vw;'"
+                       th:href="@{/uma/{uma1}(uma1=${umamusume.name})}">
+                        <img class="position-relative p-0 m-0" src="/img/umaimage/transparent_list.png"
+                             loading="lazy" decoding="async"
+                             alt=""
+                             th:style="'width:100%; height:100%; object-fit: cover; background: linear-gradient(90deg, '+ ${umamusume.main_color} + ' 0%, '+ ${umamusume.main_color} + ' 85%, rgba(255,255,255,1) 85%, rgba(255,255,255,1) 100%);'">
+                        <div class="py-1 position-absolute end-0 side-text"
+                             th:style="'writing-mode: vertical-rl; color: ' + ${umamusume.main_color} + '; font-size: .90vw;'">
+                            [[${umamusume.eng_name}]]
+                        </div>
                         <div class="position-absolute p-0 m-0">
-                            <img class="position-relative p-0 m-0" th:src="@{${umamusume.img + umamusume.name + '_list.png'}}" loading="lazy" decoding="async"
+                            <img class="position-relative p-0 m-0"
+                                 th:src="@{${umamusume.img + umamusume.name + '_list.png'}}" loading="lazy"
+                                 decoding="async"
                                  alt=""
                                  th:style="'width:100%; height:100%; object-fit: cover; background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 85%, rgba(255,255,255,1) 85%, rgba(255,255,255,1) 100%);'">
                         </div>
@@ -33,7 +37,8 @@
                             <p class="card-title pt-0 m-0" style="font-size: .90vw;">[[${umamusume.jpn_name}]]</p>
                             <p class="card-text p-0 m-0" style="font-size: .85vw;">[[${umamusume.kor_name}]]</p>
                         </div>
-                    </div>
+                        <figcaption th:style="'background-color:'+${umamusume.main_color}+'B3;'">View More</figcaption>
+                    </a>
                 </tr>
             </div>
         </div>

@@ -77,12 +77,17 @@ interface UmamusumeRepository : JpaRepository<Umamusume, Long> {
     @Query("Select u From Umamusume u Order By u.eng_name DESC")
     fun showUmamusumeDescEng(): List<Umamusume>
 
+
+    @Cacheable("selectone")
+    @Query("Select u From Umamusume u Where u.name = :uma")
+    fun selectUmamusume(uma:String): List<Umamusume>
+
     /**
      * Umamusumeエンティティのキャッシュエントリを無効化します。
      * キャッシュのエントリを無効化するためにsaveメソッドをオーバーライドします。
      */
     @CacheEvict(
-        value = ["releasedate", "asckor", "desckor", "ascjpn", "descjpn", "asceng", "desceng","releasedateReverse"],
+        value = ["releasedate", "asckor", "desckor", "ascjpn", "descjpn", "asceng", "desceng","releasedateReverse", "selectone"],
         allEntries = true
     )
     fun save(umamusume: Umamusume): Umamusume
