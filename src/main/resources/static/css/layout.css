@@ -162,7 +162,7 @@ footer {
     }
 }
 
-@media screen and (max-width: 766px) {
+@media screen and (max-width: 767px) {
 
     .mainPage {
         min-width: 766px;
@@ -211,10 +211,6 @@ footer {
         font-size: 14px !important;
     }
 
-    .umasupport{
-        width: 100% !important;
-    }
-
     .umasupport_img{
         width: min(15vw,256px) !important;
     }
@@ -227,11 +223,6 @@ footer {
         border: 3px solid #479000;
         padding: 8px 0;
         margin: 0 0;
-    }
-
-    .mainPage {
-        width: 100%;
-        min-width: 433px;
     }
 
     .navbar {
@@ -270,18 +261,6 @@ footer {
     .navbar__shortLoginBtn {
         display: none;
         position: absolute;
-    }
-}
-
-@media screen and (max-width: 582px) {
-    .mainPage {
-        min-width: 582px !important;
-    }
-}
-
-@media screen and (max-width: 575px) {
-    .mainPage {
-        min-width: 575px !important;
     }
 }
 

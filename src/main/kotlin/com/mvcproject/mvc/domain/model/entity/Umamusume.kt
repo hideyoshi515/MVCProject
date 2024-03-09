@@ -1,6 +1,5 @@
 package com.mvcproject.mvc.domain.model.entity
 
-import com.mvcproject.mvc.domain.model.UserRole
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType

@@ -9,7 +9,7 @@
         <div class="mainPage" style="margin:0 auto;">
             <h1 style="text-align: center; padding-top: 1rem; padding-bottom: 1rem; user-select: none !important;"
                 th:text="#{menu1}"></h1>
-            <div id="umaList" class="container d-flex justify-content-center flex-wrap p-0 w-100">
+            <div id="umaList" class="container d-flex justify-content-start flex-wrap p-0 w-100">
                 <tr th:each="umamusume : ${umamusumes}"
                     th:style="'--main-color:' + ${umamusume.main_color} + '; --sub-color:' + ${umamusume.sub_color} + ';'"
                     align="center" valign="middle">

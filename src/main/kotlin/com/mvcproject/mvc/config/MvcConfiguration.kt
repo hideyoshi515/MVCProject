@@ -63,7 +63,8 @@ class MvcConfiguration : WebMvcConfigurer {
             "skillsC",
             "selectone",
             "supportcard",
-            "supportcardChar"
+            "supportcardChar",
+            "selectIkusei"
         )
     }
 }

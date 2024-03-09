@@ -1,5 +1,6 @@
 package com.mvcproject.mvc.app.user
 
+import com.mvcproject.mvc.domain.repository.IkuseiRepository
 import com.mvcproject.mvc.domain.repository.SupportCardRepository
 import com.mvcproject.mvc.domain.repository.UmamusumeRepository
 import org.springframework.beans.factory.annotation.Autowired
@@ -18,7 +19,7 @@ import java.util.*
  * @param umamusumeRepository ウマ娘に関するデータアクセスを提供するリポジトリ。
  */
 @Controller
-class UmaController(private val umamusumeRepository: UmamusumeRepository, private  val supportRepository: SupportCardRepository) {
+class UmaController(private val umamusumeRepository: UmamusumeRepository, private  val supportRepository: SupportCardRepository, private  val ikuseiReository: IkuseiRepository) {
     @Autowired
     lateinit var ms: MessageSource
 
@@ -39,8 +40,10 @@ class UmaController(private val umamusumeRepository: UmamusumeRepository, privat
     fun getToOrderedIndex(model: Model, @PathVariable("umamusume", required = false) umamusume_param: String): String {
         val umamusume = umamusumeRepository.selectUmamusume(umamusume_param)
         val support = supportRepository.showSupportCardByChar(umamusume_param)
+        val ikusei = ikuseiReository.selectIkusei(umamusume_param)
         model.addAttribute("select", umamusume)
         model.addAttribute("support", support)
+        model.addAttribute("ikuseilist", ikusei)
         return "/uma/index/umamusume.html"
     }
 }
