@@ -8,19 +8,19 @@
     <div id='wrapper' class="d-flex justify-content-center align-items-center" ondragstart="return false">
         <div class="mainPage none-select" style="margin:0 auto;" th:each="umamusume : ${select}">
             <div class="row m-0 p-0">
-                <div class="justify-content-center col-sm-4 m-0 p-0 m" style="width: max(50%, 400px); height: 560px;">
-                    <div class="m-0 p-0" th:style="'height:15%; background:'+ ${umamusume.main_color} + ';'">
+                <div class="justify-content-center col-sm-4 m-0 p-0 m" style="width: max(50%, 400px); height: 455px;">
+                    <div class="m-0 p-0" th:style="'height:3rem; background:'+ ${umamusume.main_color} + ';'">
                         <div class="d-flex align-items-center justify-content-center m-0 p-0"
                              th:style="'color:white; height:100%; -webkit-text-stroke: 2px '+ ${umamusume.sub_color} + ';'">
                             <p style="font-size: max(2vw,2rem);">[[${umamusume.jpn_name}]]</p>
                         </div>
                     </div>
-                    <div class="m-0 p-0" th:style="'height:70%; text-align:center'">
+                    <div class="m-0 p-0" th:style="'height:auto; text-align:center'">
                         <img class="img_fit"
                              th:src="@{${'/img/umaimage/stand/chara_stand_' + umamusume.order + '_' + umamusume.order + '01.png'}}"
                              style="width: 350px;">
                     </div>
-                    <div class="m-0 p-0" th:style="'height:15%; background:'+ ${umamusume.sub_color} + ';'">
+                    <div class="m-0 p-0" th:style="'height:3rem; background:'+ ${umamusume.sub_color} + ';'">
                         <div class="d-flex align-items-center justify-content-center m-0 p-0"
                              th:style="'color:white; height:100%; -webkit-text-stroke: 2px '+ ${umamusume.main_color} + ';'">
                             <p style="font-size: max(2vw,2rem);">[[${umamusume.kor_name}]]</p>
@@ -28,7 +28,7 @@
                         <!--<img class="img_fit" th:src="@{${'/img/umaimage/chrname/gacha_chrname_' + umamusume.order + '_03.png'}}" >-->
                     </div>
                 </div>
-                <div class="col m-0 p-0 " style="width: max(50%, 400px); min-height: 3vh; max-height: 560px;">
+                <div class="col m-0 p-0 " style="width: max(50%, 400px); min-height: 3vh; max-height: 455px;">
 
                     <div th:if="${ikuseilist.size} == 0">No Ikusei Data</div>
 
