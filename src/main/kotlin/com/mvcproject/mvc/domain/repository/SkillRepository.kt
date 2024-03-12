@@ -1,6 +1,7 @@
 package com.mvcproject.mvc.domain.repository
 
 import com.mvcproject.mvc.domain.model.entity.Skill
+import com.mvcproject.mvc.domain.model.entity.SkillSet
 import org.springframework.cache.annotation.CacheEvict
 import org.springframework.cache.annotation.Cacheable
 import org.springframework.cache.annotation.EnableCaching
@@ -20,6 +21,10 @@ interface SkillRepository : JpaRepository<Skill, Long> {
     @Cacheable("skillsC")
     @Query("Select u From Skill u Order By u.skillcode ASC")
     fun showSkillByCode(): List<Skill>
+
+    @Cacheable("skilltarget")
+    @Query("Select u From Skill u where u.skillcode = :id")
+    fun showSkillById(id:String): List<SkillSet>
 
     @CacheEvict(
         value = ["skills","skillsTC","skillsC"],

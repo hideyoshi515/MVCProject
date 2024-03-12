@@ -10,18 +10,17 @@ import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.data.jpa.repository.Query
 
 @EnableCaching
-interface SkillSetRepository : JpaRepository<SkillSetRepository, Long> {
+interface SkillSetRepository : JpaRepository<SkillSet, Long> {
     @Cacheable("skillset")
     @Query("Select u From SkillSet u")
     fun showSkillSet(): List<SkillSet>
 
-
     @Cacheable("skillssettarget")
     @Query("Select u From SkillSet u where u.id = :id")
-    fun showSkillSetById(id:String): List<SkillSet>
+    fun showSkillSetById(id: String): List<SkillSet>
 
     @CacheEvict(
-        value = ["skillset","skillssetTarget"],
+        value = ["skillset", "skillssetTarget"],
         allEntries = true
     )
     fun save(skillset: SkillSet): SkillSet

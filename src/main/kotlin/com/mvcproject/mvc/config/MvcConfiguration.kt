@@ -61,6 +61,7 @@ class MvcConfiguration : WebMvcConfigurer {
             "skills",
             "skillsTC",
             "skillsC",
+            "skilltarget",
             "selectone",
             "supportcard",
             "supportcardChar",
