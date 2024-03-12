@@ -1,4 +1,4 @@
-package com.mvcproject.mvc.app.user
+package com.mvcproject.mvc.app.uma
 
 import com.mvcproject.mvc.domain.repository.IkuseiRepository
 import com.mvcproject.mvc.domain.repository.SupportCardRepository

@@ -14,9 +14,12 @@ interface SupportCardRepository : JpaRepository<SupportCard, Long> {
     @Cacheable("supportcardChar")
     @Query("Select u From SupportCard u where u.chara = :uma")
     fun showSupportCardByChar(uma:String): List<SupportCard>
+    @Cacheable("supportcardId")
+    @Query("Select u From SupportCard u where u.id = :id")
+    fun showSupportCardById(id:String): List<SupportCard>
 
     @CacheEvict(
-        value = ["supportcard","supportcardChar"],
+        value = ["supportcard","supportcardChar","supportcardId"],
         allEntries = true
     )
     fun save(supportcard: SupportCard): SupportCard

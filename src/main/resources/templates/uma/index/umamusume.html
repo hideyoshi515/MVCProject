@@ -28,9 +28,10 @@
                         <!--<img class="img_fit" th:src="@{${'/img/umaimage/chrname/gacha_chrname_' + umamusume.order + '_03.png'}}" >-->
                     </div>
                 </div>
-                <div class="col m-0 p-0 " style="width: max(50%, 400px); min-height: 3vh; max-height: 455px;">
+                <div class="col m-0 p-0 "
+                     style="width: max(50%, 400px); min-height: 3vh; max-height: max(455px, 45rem);">
 
-                    <div th:if="${ikuseilist.size} == 0">No Ikusei Data</div>
+                    <div th:if="${ikuseilist.size} == 0" th:utext="#{noikusei}"></div>
 
                     <table class="table align-middle text-center m-0 p-0 " th:each="ikusei : ${ikuseilist}"
                            th:id="'ikusei_' + ${ikusei.id}">
@@ -45,7 +46,6 @@
                         </tr>
                         <tr th:if="${param.lang == null || param.lang == 'ko'}" style="text-overflow: ellipsis">
                             [[${ikusei.kor_name}]]
-                        </tr>
                         </tr>
                         </thead>
                         <tbody>
@@ -71,7 +71,6 @@
                                 <img
                                         th:src="@{${'/img/umaimage/support/utx_ico_obtain_106.png'}}"
                                         style="width: min(3.5vw,96px); aspect-ratio:1;"></td>
-                            </td>
                         </tr>
                         <tr class="m-0 p-0">
                             <td class="m-0 p-0 border border-1"
@@ -96,7 +95,7 @@
                 </div>
             </div>
             <div class="d-flex justify-content-start flex-wrap m-0 p-0 ">
-                <div th:if="${support.size} == 0">No Support Card</div>
+                <div th:if="${support.size} == 0" th:utext="#{nosupport}"></div>
                 <div class="umasupport d-flex align-items-center flex-wrap m-0 p-0"
                      style="width: calc(100%/calc(100%/(min(10vw,192px) + 2px)));"
                      th:each="supportcard : ${support}">
@@ -126,7 +125,6 @@
                 </div>
             </div>
         </div>
-    </div>
     </div>
 </th:block>
 </html>

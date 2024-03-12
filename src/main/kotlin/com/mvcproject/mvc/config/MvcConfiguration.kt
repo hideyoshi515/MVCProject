@@ -64,6 +64,7 @@ class MvcConfiguration : WebMvcConfigurer {
             "selectone",
             "supportcard",
             "supportcardChar",
+            "supportcardId",
             "selectIkusei"
         )
     }
