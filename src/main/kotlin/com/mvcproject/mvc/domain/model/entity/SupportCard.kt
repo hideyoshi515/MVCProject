@@ -32,6 +32,8 @@ class SupportCard {
     lateinit var start_date:String
     lateinit var outing_max:String
     lateinit var effect_id:String
+    lateinit var jpn_name:String
+    lateinit var kor_name:String
 
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)

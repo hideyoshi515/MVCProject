@@ -1,0 +1,46 @@
+textdata
+3->
+4->dress name+char name
+5->dress name
+6->char name
+7->CV data
+23->item name
+24->item description
+26->gacha name
+28->race name in ikusei (maybe)
+32->race name
+33->race name idk
+34->race park name
+35->race location name
+36->Grade race name include Story Event Race
+38->36's shorten
+47->Skill name
+48->Skill description
+55->Ikusei location name (training, sotode, yasumi)
+59->Mob Umamusume name
+65->Title(shogo)
+66->Title description
+67->Quest description
+69->Scene Change Hint
+75->Support card name + char name
+76->Support card name
+77->Support card char name
+88->Umamusume Introduce
+130->Ikusei Title
+131->Ikusei Title description
+142->Ikusei Condition
+143->Ikusei Condition description
+151->support card effect string
+154->151(support card effect) string's description
+155->support card unique effect string
+157->umamusume's birthday
+158->umamusume's height
+162->umamusume's school grade
+163->umamusume's introduce string
+164->umamusume's hobby
+165->umamusume's favorite
+166/167->umamusume's secret
+168->foot size
+170->char name
+172->ninshi description
+182->event name maybe

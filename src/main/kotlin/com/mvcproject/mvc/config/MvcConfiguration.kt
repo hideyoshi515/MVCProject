@@ -20,7 +20,7 @@ class MvcConfiguration : WebMvcConfigurer {
     @Bean
     fun localeResolver(): LocaleResolver {
         val resolver = SessionLocaleResolver()
-        resolver.setDefaultLocale(Locale.KOREA)
+        resolver.setDefaultLocale(Locale.getDefault())
         return resolver
     }
 
