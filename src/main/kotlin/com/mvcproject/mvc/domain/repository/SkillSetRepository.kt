@@ -20,7 +20,7 @@ interface SkillSetRepository : JpaRepository<SkillSet, Long> {
     fun showSkillSetById(id: String): List<SkillSet>
 
     @CacheEvict(
-        value = ["skillset", "skillssetTarget"],
+        value = ["skillset", "skillssettarget"],
         allEntries = true
     )
     fun save(skillset: SkillSet): SkillSet

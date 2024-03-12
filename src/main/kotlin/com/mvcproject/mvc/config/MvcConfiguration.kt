@@ -68,7 +68,7 @@ class MvcConfiguration : WebMvcConfigurer {
             "supportcardId",
             "selectIkusei",
             "skillset",
-            "skillsettarget"
+            "skillssettarget"
         )
     }
 }

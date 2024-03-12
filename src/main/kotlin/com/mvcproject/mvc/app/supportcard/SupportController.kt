@@ -1,6 +1,7 @@
 package com.mvcproject.mvc.app.supportcard
 
 import com.mvcproject.mvc.domain.repository.IkuseiRepository
+import com.mvcproject.mvc.domain.repository.SkillSetRepository
 import com.mvcproject.mvc.domain.repository.SupportCardRepository
 import com.mvcproject.mvc.domain.repository.UmamusumeRepository
 import org.springframework.beans.factory.annotation.Autowired
@@ -14,7 +15,7 @@ import org.springframework.web.servlet.support.RequestContextUtils
 import java.util.*
 
 @Controller
-class SupportController(private  val supportRepository: SupportCardRepository) {
+class SupportController(private  val supportRepository: SupportCardRepository, private  val skillsetRepository: SkillSetRepository) {
     @Autowired
     lateinit var ms: MessageSource
 
