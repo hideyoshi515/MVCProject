@@ -33,6 +33,7 @@ dependencies {
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.springframework.boot:spring-boot-starter-validation")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
+    implementation("com.navercorp.lucy:lucy-xss-servlet:2.0.1")
     compileOnly("org.projectlombok:lombok")
     runtimeOnly ("com.mysql:mysql-connector-j")
     annotationProcessor("org.projectlombok:lombok")

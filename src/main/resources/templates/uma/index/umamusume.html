@@ -7,7 +7,7 @@
     </div>
     <div id='wrapper' class="d-flex justify-content-center align-items-center" ondragstart="return false">
         <div class="mainPage none-select" style="margin:0 auto;" th:each="umamusume : ${select}">
-            <div class="row m-0 p-0">
+            <div class="row justify-content-center align-items-center m-0 p-0">
                 <div class="justify-content-center col-sm-4 m-0 p-0 m" style="width: max(50%, 400px); height: 455px;">
                     <div class="m-0 p-0" th:style="'height:3rem; background:'+ ${umamusume.main_color} + ';'">
                         <div class="d-flex align-items-center justify-content-center m-0 p-0"
@@ -99,7 +99,7 @@
                 <div class="umasupport d-flex align-items-center flex-wrap m-0 p-0"
                      style="width: calc(100%/calc(100%/(min(10vw,192px) + 2px)));"
                      th:each="supportcard : ${support}">
-                    <a class="support_hover position-relative">
+                    <a class="support_hover position-relative" th:href="@{/support/{supportcard}(supportcard=${supportcard.id})}">
                         <img class="umasupport_img"
                              th:src="@{${'/img/umaimage/support/support_thumb_' + supportcard.id + '.png'}}"
                              style="z-index: 1; width: min(10vw,192px); aspect-ratio:1/1.3;">

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout/default_layout">
+<th:block layout:fragment="content">
+    <div id="load">
+        <img src="/img/loading.gif" alt="loading">
+    </div>
+    <div id='wrapper' class="d-flex justify-content-center align-items-center" ondragstart="return false">
+        <div class="mainPage none-select" style="margin:0 auto;" th:each="supportcard : ${support}">
+            <div class="row justify-content-center align-items-center m-0 p-0">
+                <div class="justify-content-center col-sm-4 m-0 p-0 m" style="width: max(50%, 400px); height: 455px;">
+                    <div class="umasupport d-flex align-items-center flex-wrap m-0 p-0"
+                         style="width: calc(100%/calc(100%/(min(10vw,192px) + 2px)));"
+                         th:each="supportcard : ${support}">
+                        <a class="position-relative">
+                            <img class="umasupport_img"
+                                 th:src="@{${'/img/umaimage/support/support_thumb_' + supportcard.id + '.png'}}"
+                                 style="z-index: 1; width: min(10vw,192px); aspect-ratio:1/1.3;">
+
+                            <div th:if="${supportcard.command_id} == '0'">
+                                <img
+                                        th:src="@{${'/img/umaimage/support/utx_ico_obtain_' + supportcard.command_id + supportcard.command_type + '.png'}}"
+                                        style="position: absolute; z-index: 2; top: 0; right: 3%; width: min(2.5vw,96px); aspect-ratio:1;">
+                            </div>
+                            <div th:unless="${supportcard.command_id} == '0'">
+                                <img
+                                        th:src="@{${'/img/umaimage/support/utx_ico_obtain_' + supportcard.command_id + '.png'}}"
+                                        style="position: absolute; z-index: 2; top: 0; right: 3%; width: min(2.5vw,96px); aspect-ratio:1;">
+
+                            </div>
+                            <img
+                                    th:src="@{${'/img/umaimage/support/supportcard_rarity_0' + supportcard.rarity + '.png'}}"
+                                    style="position: absolute; z-index: 2; top: 0; left: 7%; width: min(2.75vw,96px); aspect-ratio:1;">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</th:block>
+</html>
