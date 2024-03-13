@@ -8,7 +8,7 @@
     <div id='wrapper' class="d-flex justify-content-center align-items-center" ondragstart="return false">
         <div class="mainPage none-select" style="margin:0 auto;" th:each="supportcard : ${support}">
             <div class="row justify-content-center align-items-center m-0 p-0">
-                <div class="justify-content-center col-sm-4 m-0 p-0 m" style="width: max(50%, 400px); height: 455px;">
+                <div class="justify-content-center col-sm-4 m-0 p-0 m" style="width: max(50%, 400px);">
                     <div class="umasupport d-flex justify-content-center align-items-center flex-wrap m-0 p-0"
                          style="width: calc(100%/calc(100%/(min(10vw,192px) + 2px)));"
                          th:each="supportcard : ${support}">
@@ -37,12 +37,93 @@
                                         style="position: absolute; z-index: 2; top: 0; left: 7%; width: min(5.5vw,192px); aspect-ratio:1;">
                             </a>
                             <div class="m-0 p-0 text-center"
-                                 th:if="${#strings.equals(#locale, 'ja' ) || #strings.equals(#locale, 'ja_JP' )|| #strings.equals(#locale, 'en' ) || #strings.equals(#locale, 'en_US' )}">
+                                 th:if="${#strings.equals(#locale, 'ja' ) || #strings.equals(#locale, 'ja_JP' ) || #strings.equals(#locale, 'en' ) || #strings.equals(#locale, 'en_US' )}">
                                 [[${supportcard.jpn_name}]]
                             </div>
                             <div class="m-0 p-0 text-center"
                                  th:if="${#strings.equals(#locale, 'ko' ) || #strings.equals(#locale, 'ko_KR' )}">
                                 [[${supportcard.kor_name}]]
+                            </div>
+                        </div>
+                        <div style="width: 16rem;">
+                            <div th:each="effect : ${effects}">
+
+                                <table class="table table-sm m-0 p-0" border="1">
+                                    <thead th:switch="${effect.type}">
+                                    <td class="m-0 p-0" colspan="2" th:case="1" th:utext="#{sce1}"></td>
+                                    <td class="m-0 p-0" colspan="2" th:case="2" th:utext="#{sce2}"></td>
+                                    <td class="m-0 p-0" colspan="2" th:case="3" th:utext="#{sce3}"></td>
+                                    <td class="m-0 p-0" colspan="2" th:case="4" th:utext="#{sce4}"></td>
+                                    <td class="m-0 p-0" colspan="2" th:case="5" th:utext="#{sce5}"></td>
+                                    <td class="m-0 p-0" colspan="2" th:case="6" th:utext="#{sce6}"></td>
+                                    <td class="m-0 p-0" colspan="2" th:case="7" th:utext="#{sce7}"></td>
+                                    <td class="m-0 p-0" colspan="2" th:case="8" th:utext="#{sce8}"></td>
+                                    <td class="m-0 p-0" colspan="2" th:case="9" th:utext="#{sce9}"></td>
+                                    <td class="m-0 p-0" colspan="2" th:case="10" th:utext="#{sce10}"></td>
+                                    <td class="m-0 p-0" colspan="2" th:case="11" th:utext="#{sce11}"></td>
+                                    <td class="m-0 p-0" colspan="2" th:case="12" th:utext="#{sce12}"></td>
+                                    <td class="m-0 p-0" colspan="2" th:case="13" th:utext="#{sce13}"></td>
+                                    <td class="m-0 p-0" colspan="2" th:case="14" th:utext="#{sce14}"></td>
+                                    <td class="m-0 p-0" colspan="2" th:case="15" th:utext="#{sce15}"></td>
+                                    <td class="m-0 p-0" colspan="2" th:case="16" th:utext="#{sce16}"></td>
+                                    <td class="m-0 p-0" colspan="2" th:case="17" th:utext="#{sce17}"></td>
+                                    <td class="m-0 p-0" colspan="2" th:case="18" th:utext="#{sce18}"></td>
+                                    <td class="m-0 p-0" colspan="2" th:case="19" th:utext="#{sce19}"></td>
+                                    <td class="m-0 p-0" colspan="2" th:case="25" th:utext="#{sce25}"></td>
+                                    <td class="m-0 p-0" colspan="2" th:case="26" th:utext="#{sce26}"></td>
+                                    <td class="m-0 p-0" colspan="2" th:case="27" th:utext="#{sce27}"></td>
+                                    <td class="m-0 p-0" colspan="2" th:case="28" th:utext="#{sce28}"></td>
+                                    <td class="m-0 p-0" colspan="2" th:case="30" th:utext="#{sce30}"></td>
+                                    <td class="m-0 p-0" colspan="2" th:case="31" th:utext="#{sce31}"></td>
+                                    </thead>
+
+                                    <tbody>
+                                    <tr th:if="${effect.init != '-1'}">
+                                        <td class="m-0 p-0">Lv. 00</td>
+                                        <td class="m-0 p-0" th:text="${effect.init}"></td>
+                                    </tr>
+                                    <tr th:if="${effect.limit_lv5 != '-1'}">
+                                        <td class="m-0 p-0">Lv. 05</td>
+                                        <td class="m-0 p-0" th:text="${effect.limit_lv5}"></td>
+                                    </tr>
+                                    <tr th:if="${effect.limit_lv10 != '-1'}">
+                                        <td class="m-0 p-0">Lv. 10</td>
+                                        <td class="m-0 p-0" th:text="${effect.limit_lv10}"></td>
+                                    </tr>
+                                    <tr th:if="${effect.limit_lv15 != '-1'}">
+                                        <td class="m-0 p-0">Lv. 15</td>
+                                        <td class="m-0 p-0" th:text="${effect.limit_lv15}"></td>
+                                    </tr>
+                                    <tr th:if="${effect.limit_lv20 != '-1'}">
+                                        <td class="m-0 p-0">Lv. 20</td>
+                                        <td class="m-0 p-0" th:text="${effect.limit_lv20}"></td>
+                                    </tr>
+                                    <tr th:if="${effect.limit_lv25 != '-1'}">
+                                        <td class="m-0 p-0">Lv. 25</td>
+                                        <td class="m-0 p-0" th:text="${effect.limit_lv25}"></td>
+                                    </tr>
+                                    <tr th:if="${effect.limit_lv30 != '-1'}">
+                                        <td class="m-0 p-0">Lv. 30</td>
+                                        <td class="m-0 p-0" th:text="${effect.limit_lv30}"></td>
+                                    </tr>
+                                    <tr th:if="${effect.limit_lv35 != '-1'}">
+                                        <td class="m-0 p-0">Lv. 35</td>
+                                        <td class="m-0 p-0" th:text="${effect.limit_lv35}"></td>
+                                    </tr>
+                                    <tr th:if="${effect.limit_lv40 != '-1'}">
+                                        <td class="m-0 p-0">Lv. 40</td>
+                                        <td class="m-0 p-0" th:text="${effect.limit_lv40}"></td>
+                                    </tr>
+                                    <tr th:if="${effect.limit_lv45 != '-1'}">
+                                        <td class="m-0 p-0">Lv. 45</td>
+                                        <td class="m-0 p-0" th:text="${effect.limit_lv45}"></td>
+                                    </tr>
+                                    <tr th:if="${effect.limit_lv50 != '-1'}">
+                                        <td class="m-0 p-0">Lv. 50</td>
+                                        <td class="m-0 p-0" th:text="${effect.limit_lv50}"></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>

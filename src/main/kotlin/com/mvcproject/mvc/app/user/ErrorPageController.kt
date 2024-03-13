@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping
 
 @Slf4j
 @Controller
-class errorPageController {
+class ErrorPageController {
     @RequestMapping("/error-page/404")
     fun error404(req: HttpServletRequest, resp: HttpServletResponse?): String {
         //log.info("errorPage 404")

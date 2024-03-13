@@ -1,9 +1,6 @@
 package com.mvcproject.mvc.app.supportcard
 
-import com.mvcproject.mvc.domain.repository.IkuseiRepository
-import com.mvcproject.mvc.domain.repository.SkillSetRepository
-import com.mvcproject.mvc.domain.repository.SupportCardRepository
-import com.mvcproject.mvc.domain.repository.UmamusumeRepository
+import com.mvcproject.mvc.domain.repository.*
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.MessageSource
 import org.springframework.context.i18n.LocaleContextHolder
@@ -15,7 +12,7 @@ import org.springframework.web.servlet.support.RequestContextUtils
 import java.util.*
 
 @Controller
-class SupportController(private  val supportRepository: SupportCardRepository, private  val skillsetRepository: SkillSetRepository) {
+class SupportController(private  val supportRepository: SupportCardRepository, private  val skillsetRepository: SkillSetRepository, private val supportcardeffectRepository:SupportCardEffectRepository) {
     @Autowired
     lateinit var ms: MessageSource
 
@@ -29,7 +26,9 @@ class SupportController(private  val supportRepository: SupportCardRepository, p
     @RequestMapping("/support/{card}")
     fun getToOrderedIndex(model: Model, @PathVariable("card", required = false) card_param: String): String {
         val support = supportRepository.showSupportCardById(card_param)
+        var effects = supportcardeffectRepository.showSupportCardEffectByCardId(card_param)
         model.addAttribute("support", support)
+        model.addAttribute("effects", effects)
         return "/support/index/supportcard.html"
     }
 }

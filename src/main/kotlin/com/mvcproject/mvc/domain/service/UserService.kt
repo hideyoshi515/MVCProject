@@ -73,7 +73,7 @@ class UserService(private val userRepository: UserRepository) {
     /**
      * 指定されたログインIDに対応するユーザーを取得します。
      *
-     * @param loginId 取得するユーザーのログインID。
+     * @param loginId 取得する`ユーザーのログインID。
      * @return ログインIDに対応するアカウント。存在しない場合はnull。
      */
     @Transactional(readOnly = true)

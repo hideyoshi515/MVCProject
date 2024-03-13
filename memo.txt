@@ -44,3 +44,5 @@ textdata
 170->char name
 172->ninshi description
 182->event name maybe
+
+294->support card effect table description
