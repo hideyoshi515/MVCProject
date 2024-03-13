@@ -36,8 +36,14 @@
                                         th:src="@{${'/img/umaimage/support/supportcard_rarity_0' + supportcard.rarity + '.png'}}"
                                         style="position: absolute; z-index: 2; top: 0; left: 7%; width: min(5.5vw,192px); aspect-ratio:1;">
                             </a>
-                            <div class="m-0 p-0 text-center" th:if="${#strings.equals(#locale, 'ja' ) || #strings.equals(#locale, 'en' )}">[[${supportcard.jpn_name}]]</div>
-                            <div class="m-0 p-0 text-center" th:if="${#strings.equals(#locale, 'ko' )}">[[${supportcard.kor_name}]]</div>
+                            <div class="m-0 p-0 text-center"
+                                 th:if="${#strings.equals(#locale, 'ja' ) || #strings.equals(#locale, 'ja_JP' )|| #strings.equals(#locale, 'en' ) || #strings.equals(#locale, 'en_US' )}">
+                                [[${supportcard.jpn_name}]]
+                            </div>
+                            <div class="m-0 p-0 text-center"
+                                 th:if="${#strings.equals(#locale, 'ko' ) || #strings.equals(#locale, 'ko_KR' )}">
+                                [[${supportcard.kor_name}]]
+                            </div>
                         </div>
                     </div>
                 </div>

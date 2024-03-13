@@ -40,11 +40,11 @@
                             <img
                                     th:src="@{${'/img/umaimage/ikusei/chr_icon_' + umamusume.order + '_'+ ikusei.dressid + '_02.png'}}"
                                     style="width: min(5vw,160px); aspect-ratio:1;">
-                        <tr th:if="${#strings.equals(param.lang, 'ja' ) || #strings.equals(param.lang, 'en' )}"
+                        <tr th:if="${#strings.equals(#locale, 'ja' ) || #strings.equals(#locale, 'ja_JP' )|| #strings.equals(#locale, 'en' ) || #strings.equals(#locale, 'en_US' )}"
                             style="text-overflow: ellipsis">
                             [[${ikusei.jpn_name}]]
                         </tr>
-                        <tr th:if="${#strings.equals(#locale, 'ko' )}" style="text-overflow: ellipsis">
+                        <tr th:if="${#strings.equals(#locale, 'ko' ) || #strings.equals(#locale, 'ko_KR' )}" style="text-overflow: ellipsis">
                             [[${ikusei.kor_name}]]
                         </tr>
                         </thead>
