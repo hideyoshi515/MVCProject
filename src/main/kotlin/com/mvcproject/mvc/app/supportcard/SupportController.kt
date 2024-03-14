@@ -12,11 +12,15 @@ import org.springframework.web.servlet.support.RequestContextUtils
 import java.util.*
 
 @Controller
-class SupportController(private  val supportRepository: SupportCardRepository, private  val skillsetRepository: SkillSetRepository, private val supportcardeffectRepository:SupportCardEffectRepository) {
+class SupportController(
+    private val supportRepository: SupportCardRepository,
+    private val skillsetRepository: SkillSetRepository,
+    private val supportcardeffectRepository: SupportCardEffectRepository
+) {
     @Autowired
     lateinit var ms: MessageSource
 
-    @RequestMapping("/support/list")
+    @RequestMapping("/support", "/support/list")
     fun getToIndex(model: Model): String {
         val support = supportRepository.showSupportCard()
         model.addAttribute("support", support)

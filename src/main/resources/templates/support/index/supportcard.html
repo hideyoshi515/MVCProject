@@ -2,130 +2,108 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="layout/default_layout">
 <th:block layout:fragment="content">
-    <div id="load">
+    <div class="w-100 h-100" id="load">
         <img src="/img/loading.gif" alt="loading">
     </div>
     <div id='wrapper' class="d-flex justify-content-center align-items-center" ondragstart="return false">
         <div class="mainPage none-select" style="margin:0 auto;" th:each="supportcard : ${support}">
             <div class="row justify-content-center align-items-center m-0 p-0">
-                <div class="justify-content-center col-sm-4 m-0 p-0 m" style="width: max(50%, 400px);">
+                <div class="d-flex justify-content-center col-sm-4 m-0 mb-2 p-0 m" style="width: max(50%, 400px);">
                     <div class="umasupport d-flex justify-content-center align-items-center flex-wrap m-0 p-0"
                          style="width: calc(100%/calc(100%/(min(10vw,192px) + 2px)));"
                          th:each="supportcard : ${support}">
 
-                        <div class="">
+                        <div class="justify-content-center">
 
                             <div class="m-0 p-0 text-center" th:utext="${supportcard.title}"></div>
-                            <a class="d-flex position-relative">
+                            <a class="d-flex m-auto position-relative" style="width: 170px;">
                                 <img class="umasupport_img"
                                      th:src="@{${'/img/umaimage/support/support_thumb_' + supportcard.id + '.png'}}"
-                                     style="z-index: 1; width: min(20vw,384px); aspect-ratio:1/1.3;">
+                                     style="z-index: 1; min-width: 170px; width: 170px; aspect-ratio:1/1.3;">
 
                                 <div th:if="${supportcard.command_id} == '0'">
-                                    <img
+                                    <img class="m-0 p-0"
                                             th:src="@{${'/img/umaimage/support/utx_ico_obtain_' + supportcard.command_id + supportcard.command_type + '.png'}}"
-                                            style="position: absolute; z-index: 2; top: 0; right: 3%; width: min(5vw,192px); aspect-ratio:1;">
+                                            style="position: absolute; z-index: 2; top: 0; right: 3%; min-width:42px; width: 42px; aspect-ratio:1;">
                                 </div>
                                 <div th:unless="${supportcard.command_id} == '0'">
-                                    <img
+                                    <img class="m-0 p-0"
                                             th:src="@{${'/img/umaimage/support/utx_ico_obtain_' + supportcard.command_id + '.png'}}"
-                                            style="position: absolute; z-index: 2; top: 0; right: 3%; width: min(5vw,192px); aspect-ratio:1;">
+                                            style="position: absolute; z-index: 2; top: 0; right: 3%; min-width:42px; width: 42px; aspect-ratio:1;">
 
                                 </div>
-                                <img
+                                <img class="m-0 p-0"
                                         th:src="@{${'/img/umaimage/support/supportcard_rarity_0' + supportcard.rarity + '.png'}}"
-                                        style="position: absolute; z-index: 2; top: 0; left: 7%; width: min(5.5vw,192px); aspect-ratio:1;">
+                                        style="position: absolute; z-index: 2; top: 0; left: 7%; min-width:47px; width: 47px; aspect-ratio:1;">
                             </a>
                             <div class="m-0 p-0 text-center"
-                                 th:if="${#strings.equals(#locale, 'ja' ) || #strings.equals(#locale, 'ja_JP' ) || #strings.equals(#locale, 'en' ) || #strings.equals(#locale, 'en_US' )}">
+                                 th:if="${#strings.equals(#locale, 'ja' ) || #strings.equals(#locale, 'ja_JP' )}">
                                 [[${supportcard.jpn_name}]]
                             </div>
                             <div class="m-0 p-0 text-center"
-                                 th:if="${#strings.equals(#locale, 'ko' ) || #strings.equals(#locale, 'ko_KR' )}">
+                                 th:unless="${#strings.equals(#locale, 'ja' ) || #strings.equals(#locale, 'ja_JP' )||#strings.equals(#locale, 'en' ) || #strings.equals(#locale, 'en_US' )}">
                                 [[${supportcard.kor_name}]]
                             </div>
-                        </div>
-                        <div style="width: 16rem;">
-                            <div th:each="effect : ${effects}">
-
-                                <table class="table table-sm m-0 p-0" border="1">
-                                    <thead th:switch="${effect.type}">
-                                    <td class="m-0 p-0" colspan="2" th:case="1" th:utext="#{sce1}"></td>
-                                    <td class="m-0 p-0" colspan="2" th:case="2" th:utext="#{sce2}"></td>
-                                    <td class="m-0 p-0" colspan="2" th:case="3" th:utext="#{sce3}"></td>
-                                    <td class="m-0 p-0" colspan="2" th:case="4" th:utext="#{sce4}"></td>
-                                    <td class="m-0 p-0" colspan="2" th:case="5" th:utext="#{sce5}"></td>
-                                    <td class="m-0 p-0" colspan="2" th:case="6" th:utext="#{sce6}"></td>
-                                    <td class="m-0 p-0" colspan="2" th:case="7" th:utext="#{sce7}"></td>
-                                    <td class="m-0 p-0" colspan="2" th:case="8" th:utext="#{sce8}"></td>
-                                    <td class="m-0 p-0" colspan="2" th:case="9" th:utext="#{sce9}"></td>
-                                    <td class="m-0 p-0" colspan="2" th:case="10" th:utext="#{sce10}"></td>
-                                    <td class="m-0 p-0" colspan="2" th:case="11" th:utext="#{sce11}"></td>
-                                    <td class="m-0 p-0" colspan="2" th:case="12" th:utext="#{sce12}"></td>
-                                    <td class="m-0 p-0" colspan="2" th:case="13" th:utext="#{sce13}"></td>
-                                    <td class="m-0 p-0" colspan="2" th:case="14" th:utext="#{sce14}"></td>
-                                    <td class="m-0 p-0" colspan="2" th:case="15" th:utext="#{sce15}"></td>
-                                    <td class="m-0 p-0" colspan="2" th:case="16" th:utext="#{sce16}"></td>
-                                    <td class="m-0 p-0" colspan="2" th:case="17" th:utext="#{sce17}"></td>
-                                    <td class="m-0 p-0" colspan="2" th:case="18" th:utext="#{sce18}"></td>
-                                    <td class="m-0 p-0" colspan="2" th:case="19" th:utext="#{sce19}"></td>
-                                    <td class="m-0 p-0" colspan="2" th:case="25" th:utext="#{sce25}"></td>
-                                    <td class="m-0 p-0" colspan="2" th:case="26" th:utext="#{sce26}"></td>
-                                    <td class="m-0 p-0" colspan="2" th:case="27" th:utext="#{sce27}"></td>
-                                    <td class="m-0 p-0" colspan="2" th:case="28" th:utext="#{sce28}"></td>
-                                    <td class="m-0 p-0" colspan="2" th:case="30" th:utext="#{sce30}"></td>
-                                    <td class="m-0 p-0" colspan="2" th:case="31" th:utext="#{sce31}"></td>
-                                    </thead>
-
-                                    <tbody>
-                                    <tr th:if="${effect.init != '-1'}">
-                                        <td class="m-0 p-0">Lv. 00</td>
-                                        <td class="m-0 p-0" th:text="${effect.init}"></td>
-                                    </tr>
-                                    <tr th:if="${effect.limit_lv5 != '-1'}">
-                                        <td class="m-0 p-0">Lv. 05</td>
-                                        <td class="m-0 p-0" th:text="${effect.limit_lv5}"></td>
-                                    </tr>
-                                    <tr th:if="${effect.limit_lv10 != '-1'}">
-                                        <td class="m-0 p-0">Lv. 10</td>
-                                        <td class="m-0 p-0" th:text="${effect.limit_lv10}"></td>
-                                    </tr>
-                                    <tr th:if="${effect.limit_lv15 != '-1'}">
-                                        <td class="m-0 p-0">Lv. 15</td>
-                                        <td class="m-0 p-0" th:text="${effect.limit_lv15}"></td>
-                                    </tr>
-                                    <tr th:if="${effect.limit_lv20 != '-1'}">
-                                        <td class="m-0 p-0">Lv. 20</td>
-                                        <td class="m-0 p-0" th:text="${effect.limit_lv20}"></td>
-                                    </tr>
-                                    <tr th:if="${effect.limit_lv25 != '-1'}">
-                                        <td class="m-0 p-0">Lv. 25</td>
-                                        <td class="m-0 p-0" th:text="${effect.limit_lv25}"></td>
-                                    </tr>
-                                    <tr th:if="${effect.limit_lv30 != '-1'}">
-                                        <td class="m-0 p-0">Lv. 30</td>
-                                        <td class="m-0 p-0" th:text="${effect.limit_lv30}"></td>
-                                    </tr>
-                                    <tr th:if="${effect.limit_lv35 != '-1'}">
-                                        <td class="m-0 p-0">Lv. 35</td>
-                                        <td class="m-0 p-0" th:text="${effect.limit_lv35}"></td>
-                                    </tr>
-                                    <tr th:if="${effect.limit_lv40 != '-1'}">
-                                        <td class="m-0 p-0">Lv. 40</td>
-                                        <td class="m-0 p-0" th:text="${effect.limit_lv40}"></td>
-                                    </tr>
-                                    <tr th:if="${effect.limit_lv45 != '-1'}">
-                                        <td class="m-0 p-0">Lv. 45</td>
-                                        <td class="m-0 p-0" th:text="${effect.limit_lv45}"></td>
-                                    </tr>
-                                    <tr th:if="${effect.limit_lv50 != '-1'}">
-                                        <td class="m-0 p-0">Lv. 50</td>
-                                        <td class="m-0 p-0" th:text="${effect.limit_lv50}"></td>
-                                    </tr>
-                                    </tbody>
-                                </table>
+                            <div class="m-0 p-0 text-center"
+                                 th:if="${#strings.equals(#locale, 'en' ) || #strings.equals(#locale, 'en_US' )}">
+                                [[${supportcard.eng_name}]]
                             </div>
-                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center flex-wrap mb-2">
+                    <div style="width: 300px; text-align:center;" th:each="effect : ${effects}">
+
+                        <table class="table table-sm table-bordered m-0 p-0 h-100" border="1">
+                            <thead class="h-100 align-top" th:switch="${effect.type}">
+                            <td class="m-0 p-0" colspan="2" th:case="1" th:utext="#{sce1}"></td>
+                            <td class="m-0 p-0" colspan="2" th:case="2" th:utext="#{sce2}"></td>
+                            <td class="m-0 p-0" colspan="2" th:case="3" th:utext="#{sce3}"></td>
+                            <td class="m-0 p-0" colspan="2" th:case="4" th:utext="#{sce4}"></td>
+                            <td class="m-0 p-0" colspan="2" th:case="5" th:utext="#{sce5}"></td>
+                            <td class="m-0 p-0" colspan="2" th:case="6" th:utext="#{sce6}"></td>
+                            <td class="m-0 p-0" colspan="2" th:case="7" th:utext="#{sce7}"></td>
+                            <td class="m-0 p-0" colspan="2" th:case="8" th:utext="#{sce8}"></td>
+                            <td class="m-0 p-0" colspan="2" th:case="9" th:utext="#{sce9}"></td>
+                            <td class="m-0 p-0" colspan="2" th:case="10" th:utext="#{sce10}"></td>
+                            <td class="m-0 p-0" colspan="2" th:case="11" th:utext="#{sce11}"></td>
+                            <td class="m-0 p-0" colspan="2" th:case="12" th:utext="#{sce12}"></td>
+                            <td class="m-0 p-0" colspan="2" th:case="13" th:utext="#{sce13}"></td>
+                            <td class="m-0 p-0" colspan="2" th:case="14" th:utext="#{sce14}"></td>
+                            <td class="m-0 p-0" colspan="2" th:case="15" th:utext="#{sce15}"></td>
+                            <td class="m-0 p-0" colspan="2" th:case="16" th:utext="#{sce16}"></td>
+                            <td class="m-0 p-0" colspan="2" th:case="17" th:utext="#{sce17}"></td>
+                            <td class="m-0 p-0" colspan="2" th:case="18" th:utext="#{sce18}"></td>
+                            <td class="m-0 p-0" colspan="2" th:case="19" th:utext="#{sce19}"></td>
+                            <td class="m-0 p-0" colspan="2" th:case="25" th:utext="#{sce25}"></td>
+                            <td class="m-0 p-0" colspan="2" th:case="26" th:utext="#{sce26}"></td>
+                            <td class="m-0 p-0" colspan="2" th:case="27" th:utext="#{sce27}"></td>
+                            <td class="m-0 p-0" colspan="2" th:case="28" th:utext="#{sce28}"></td>
+                            <td class="m-0 p-0" colspan="2" th:case="30" th:utext="#{sce30}"></td>
+                            <td class="m-0 p-0" colspan="2" th:case="31" th:utext="#{sce31}"></td>
+                            </thead>
+
+                            <tbody>
+                            <tr style="min-width:1rem;">
+                                <td class="m-0 p-0" th:if="${effect.unlocklv == '0'}"
+                                    th:text="#{kaihou_lv0}"></td>
+                                <td class="m-0 p-0" th:if="${effect.unlocklv != '0'}"
+                                    th:text="${'Lv. '+effect.unlocklv} + ' '+ #{kaihou}"></td>
+                                <td class="m-0 p-0 col-6"
+                                    th:if="${effect.minval == effect.maxval && (effect.type == '1' || effect.type == '2' || effect.type == '8' || effect.type == '15' || effect.type == '16' || effect.type == '18' || effect.type == '25' || effect.type == '26' || effect.type == '27' || effect.type == '28')  }"
+                                    th:text="${effect.minval}+'％'"></td>
+                                <td class="m-0 p-0 col-6"
+                                    th:if="${effect.minval == effect.maxval && !(effect.type == '1' || effect.type == '2' || effect.type == '8' || effect.type == '15' || effect.type == '16' || effect.type == '18' || effect.type == '25' || effect.type == '26' || effect.type == '27' || effect.type == '28')  }"
+                                    th:text="${effect.minval}"></td>
+                                <td class="m-0 p-0 col-6"
+                                    th:if="${effect.minval != effect.maxval && (effect.type == '1' || effect.type == '2' || effect.type == '8' || effect.type == '15' || effect.type == '16' || effect.type == '18' || effect.type == '25' || effect.type == '26' || effect.type == '27' || effect.type == '28')  }"
+                                    th:text="${effect.minval + '％ ～ ' + effect.maxval+'％'}">
+                                <td class="m-0 p-0 col-6"
+                                    th:if="${effect.minval != effect.maxval && !(effect.type == '1' || effect.type == '2' || effect.type == '8' || effect.type == '15' || effect.type == '16' || effect.type == '18' || effect.type == '25' || effect.type == '26' || effect.type == '27' || effect.type == '28')  }"
+                                    th:text="${effect.minval + ' ～ ' + effect.maxval}">
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>

@@ -27,6 +27,9 @@ class SupportCardEffect {
     lateinit var limit_lv40:String
     lateinit var limit_lv45:String
     lateinit var limit_lv50:String
+    lateinit var unlocklv:String
+    lateinit var minval:String
+    lateinit var maxval:String
 
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)

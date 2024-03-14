@@ -34,6 +34,7 @@ class SupportCard {
     lateinit var effect_id:String
     lateinit var jpn_name:String
     lateinit var kor_name:String
+    lateinit var eng_name:String
 
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)

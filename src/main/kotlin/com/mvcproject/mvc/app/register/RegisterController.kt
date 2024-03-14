@@ -56,12 +56,17 @@ class RegisterController(private val userService: UserService) {
     @PostMapping("/register")
     fun join(@ModelAttribute registerRequest: @Valid LoggedInRequest, bindingResult: BindingResult): String {
         // loginId 重複チェック
-        var banned_nick = arrayOf("관리자", "운영자", "매니저", "admin", "Admin", "Administrator", "Manager", "Manager", "管理者", "運営者")
+        var banned_nick =
+            arrayOf("관리자", "운영자", "매니저", "admin", "Admin", "Administrator", "Manager", "Manager", "管理者", "運営者")
         if (userService.checkLoginIdDuplicate(registerRequest.loginId)) {
             bindingResult.addError(FieldError("registerRequest", "loginId", "이미 존재하는 아이디입니다."))
         }
         // ニックネーム重複チェックおよび禁止ニックネーム・正規表現チェック
-        if (userService.checkNicknameDuplicate(registerRequest.nickname) || banned_nick.indexOf(registerRequest.nickname) > -1 || !Pattern.matches("^[a-zA-Z0-9]*$", registerRequest.nickname)) {
+        if (userService.checkNicknameDuplicate(registerRequest.nickname) || banned_nick.indexOf(registerRequest.nickname) > -1 || !Pattern.matches(
+                "^[a-zA-Z0-9]*$",
+                registerRequest.nickname
+            )
+        ) {
             bindingResult.addError(FieldError("registerRequest", "nickname", "이미 존재하는 닉네임입니다."))
         }
         // パスワード長および特殊文字チェック

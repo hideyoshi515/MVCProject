@@ -2,11 +2,11 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="layout/default_layout">
 <th:block layout:fragment="content">
-    <div id="load">
+    <div class="w-100 h-100" id="load">
         <img src="/img/loading.gif" alt="loading">
     </div>
     <div id='wrapper' class="d-flex justify-content-center align-items-center" ondragstart="return false">
-        <div class="mainPage" style="margin:0 auto;">
+        <div class="mainPage none-select" style="margin:0 auto;">
             <h1 style="text-align: center; padding-top: 1rem; padding-bottom: 1rem; user-select: none !important;"
                 th:text="#{menu1}"></h1>
             <div id="umaList" class="container d-flex justify-content-start flex-wrap p-0 w-100">
@@ -15,7 +15,7 @@
                     align="center" valign="middle">
                     <div class="break" th:if="${umamusume.name == 'HappyMeek'}">
                     </div>
-                    <a class="card charbox rounded-0 none-select position-relative"
+                    <a class="card charbox rounded-0 position-relative"
                        th:style="'border-color:' + ${umamusume.sub_color} + '; margin:0.2vw;'"
                        th:href="@{/uma/{uma1}(uma1=${umamusume.name})}">
                         <img class="position-relative p-0 m-0" src="/img/umaimage/transparent_list.png"

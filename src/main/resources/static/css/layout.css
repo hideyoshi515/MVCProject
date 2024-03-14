@@ -28,17 +28,17 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 100;
+    z-index: 200;
 }
 
 body {
-    padding-top: 61px;
+    padding-top: 57px;
     --bs-body-font-family: 'RodinWanpakuPro-B', 'gyeonggicheonyeontitleOTF_Medium', var(--bs-font-sans-serif);
 }
 
 #wrapper {
     height: auto;
-    min-height: calc(100vh - (61px + 2px) - (83px - 2px));
+    min-height: calc(100vh - (57px + 2px) - (83px - 3px));
     margin-left: auto;
     margin-right: auto;
     padding-bottom: 0px;
@@ -211,10 +211,6 @@ footer {
         font-size: 14px !important;
     }
 
-    .umasupport_img{
-        width: min(15vw,256px) !important;
-    }
-
     .navbar {
         display: flex;
         justify-content: start;
@@ -261,6 +257,12 @@ footer {
     .navbar__shortLoginBtn {
         display: none;
         position: absolute;
+    }
+}
+
+@media screen and(max-width: 652px) {
+    #wrapper {
+        min-height: calc(100vh - (57px + 2px) - (107px - 3px)) !important;
     }
 }
 

@@ -29,7 +29,7 @@ class UmaController(private val umamusumeRepository: UmamusumeRepository, privat
      * @param model Spring MVC モデル。
      * @return レンダリングするビューの名前。"/uma/list/umalist.html" が返されます。
      */
-    @RequestMapping("/uma/list")
+    @RequestMapping("/uma","/uma/list")
     fun getToIndex(model: Model): String {
         val umamusume = umamusumeRepository.showUmamusume()
         model.addAttribute("umamusumes", umamusume)

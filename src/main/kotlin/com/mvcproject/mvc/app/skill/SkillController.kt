@@ -21,7 +21,7 @@ class SkillController(private val skillRepository: SkillRepository) {
     @Autowired
     lateinit var ms: MessageSource
 
-    @RequestMapping("/skill/list")
+    @RequestMapping("/skill","/skill/list")
     fun getToIndex(model: Model): String {
         val skill = skillRepository.showSkillByTypeCode()
         model.addAttribute("skills", skill)
