@@ -102,22 +102,22 @@
                     <a class="support_hover position-relative" th:href="@{/support/{supportcard}(supportcard=${supportcard.id})}">
                         <img class="umasupport_img"
                              th:src="@{${'/img/umaimage/support/support_thumb_' + supportcard.id + '.png'}}"
-                             style="z-index: 1; width: min(10vw,192px); aspect-ratio:1/1.3;">
+                                 style="z-index: 1; width: 128px; aspect-ratio:1/1.3;">
 
                         <div th:if="${supportcard.command_id} == '0'">
                             <img
                                     th:src="@{${'/img/umaimage/support/utx_ico_obtain_' + supportcard.command_id + supportcard.command_type + '.png'}}"
-                                    style="position: absolute; z-index: 2; top: 0; right: 3%; width: min(2.5vw,96px); aspect-ratio:1;">
+                                    style="position: absolute; z-index: 2; top: 0; right: 3%; width: 32px; aspect-ratio:1;">
                         </div>
                         <div th:unless="${supportcard.command_id} == '0'">
                             <img
                                     th:src="@{${'/img/umaimage/support/utx_ico_obtain_' + supportcard.command_id + '.png'}}"
-                                    style="position: absolute; z-index: 2; top: 0; right: 3%; width: min(2.5vw,96px); aspect-ratio:1;">
+                                    style="position: absolute; z-index: 2; top: 0; right: 3%; width: 32px; aspect-ratio:1;">
 
                         </div>
                         <img
                                 th:src="@{${'/img/umaimage/support/supportcard_rarity_0' + supportcard.rarity + '.png'}}"
-                                style="position: absolute; z-index: 2; top: 0; left: 7%; width: min(2.75vw,96px); aspect-ratio:1;">
+                                style="position: absolute; z-index: 2; top: 0; left: 7%; width: 35px; aspect-ratio:1;">
                         <figcaption class="position-absolute"
                                     th:style="'background-color:#000000B3; font-size:min(5vw, 12px);'">Detail
                         </figcaption>
