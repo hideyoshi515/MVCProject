@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="layout/default_layout"
+>
+<th:block layout:fragment="content">
+    <div class="w-100 h-100" id="load">
+        <img src="/img/loading.gif" alt="loading">
+    </div>
+
+    <div id='wrapper' class="d-flex justify-content-center align-items-center">
+        <div class="container mt-5">
+            <table class="table table-bordered text-center align-middle p-0 m-0" style="background-color:#ffffff;">
+                <tbody th:if="${threads != null}" th:each="thread : ${threads.content}">
+
+                <tr>
+                    <td class="col-3 p-0 m-0" th:text="${thread.trainderid}"></td>
+                    <td class="border-bottom-0 col-1 px-1 py-3 m-0">
+                        <img th:src="@{${'/img/umaimage/support/support_card_s_'+thread.support + '.png'}}"
+                             style="width: 48px; aspect-ratio: 1;">
+                        <br>
+                        <p th:if="${thread.supportdeko} == '0'" th:utext="'☆☆☆☆'"></p>
+                        <p th:if="${thread.supportdeko} == '1'" th:utext="'★☆☆☆'"></p>
+                        <p th:if="${thread.supportdeko} == '2'" th:utext="'★★☆☆'"></p>
+                        <p th:if="${thread.supportdeko} == '3'" th:utext="'★★★☆'"></p>
+                        <p th:if="${thread.supportdeko} == '4'" th:utext="'★★★★'"></p>
+                    </td>
+
+                    <td class="border-end-0 align-middle col-1 pt-0 pb-1 ps-3 pe-0 mx-0 mt-0 mb-3">
+                        <img th:src="@{${'/img/umaimage/ikusei/chr_icon_'+(thread.uma/100)+'_'+thread.uma + '_02.png'}}"
+                             style="width: 72px; aspect-ratio: 1;">
+                        <br>
+                    </td>
+                    <td class="border-start-0">
+
+                    </td>
+                </tr>
+                </tbody>
+                <tbody th:unless="${threads != null}">
+                <tr>
+                    <td colspan="2">No threads found.</td>
+                </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</th:block>
+</html>
