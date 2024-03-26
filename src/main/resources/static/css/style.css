@@ -249,13 +249,13 @@ tr td {
 }
 
 .twitter-widget-wrap ::-webkit-scrollbar-thumb {
-    background-color: #63c404;
+    background-color: #2a5dfa;
     -webkit-border-radius: 20px;
     border-radius: 20px;
 }
 
 .twitter-widget-wrap ::scrollbar-thumb {
-    background-color: #63c404;
+    background-color: #2a5dfa;
     -webkit-border-radius: 20px;
     border-radius: 20px;
 }
@@ -263,19 +263,21 @@ tr td {
 
 
 .umacolordropdown-item:hover {
-    background-color: #63c404;
+    background-color: #2a5dfa;
     color: white;
 }
 
 .umacolorbtn {
     color: white;
+    --bs-btn-hover-color: #2a5dfa !important;
+    --bs-btn-active-color: #2a5dfa !important;
 }
 
 .umacolordropdown-item,
 .umacolordropdown-menu,
 .umacolorbtn:hover {
     background-color: white;
-    color: #63c404;
+    color: #2a5dfa;
 }
 
 .umacolordropdown-item:focus-within,
@@ -291,7 +293,7 @@ tr td {
 .umacolorbtn:active.focus-within,
 .umacolorbtn:active:focus-within {
     background-color: white;
-    color: #479000;
+    color: #0e29f6;
 }
 
 .img_fit{

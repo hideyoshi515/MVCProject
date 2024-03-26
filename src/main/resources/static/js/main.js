@@ -2,8 +2,13 @@ const toggleBtn = document.querySelector('.navbar__toggleBtn');
 const menu = document.querySelector('.navbar__menu');
 const links = document.querySelector('.navbar__links');
 const navbar = document.querySelector('.navbar');
+const navbarlogo = navbar.querySelector('.navbar__logo');
 let hamburgMenuShow = false;
 const loading_page = document.getElementById("load");
+
+document.addEventListener("DOMContentLoaded", () => {
+    history.replaceState({}, null, location.pathname);
+});
 
 window.onload = function () {
     setTimeout(function () {
@@ -16,10 +21,13 @@ toggleBtn.addEventListener('click', () => {
     links.classList.toggle('active');
     if (menu.classList.contains('active')) {
         hamburgMenuShow = true;
-        navbar.style.background = "#63c404";
+        navbar.style.background = "#2a5dfa";
+        navbarlogo.style.visibility  = 'hidden';
+        //navbar.style.background = "#63c404";
     } else {
         hamburgMenuShow = false;
         navbar.removeAttribute('style');
+        navbarlogo.style.visibility  = 'visible';
     }
 })
 
@@ -31,10 +39,12 @@ window.onresize = function () {
         menu.classList.remove('active');
         links.classList.remove('active');
         navbar.removeAttribute('style');
+        navbarlogo.style.visibility  = 'visible';
     } else if (width <= 736 && hamburgMenuShow) {
         menu.classList.add('active');
         links.classList.add('active');
         navbar.style.background = "#63c404";
+        navbarlogo.style.visibility  = 'hidden';
     }
 }
 
@@ -80,7 +90,7 @@ document.getElementById('skillmodal').addEventListener('click', function () {
 
 
 
-function skillModalById(skillnum) {
+function skillModalById(skillnum, lang) {
     let skillmodal = new bootstrap.Modal(document.getElementById('skillmodal'), {
         backdrop: false,
         focus: true
@@ -102,7 +112,7 @@ function skillModalById(skillnum) {
     console.log(":"+prec1+":");
 
     const urlParams = new URL(window.location.href).searchParams;
-    let lang = urlParams.get('lang');
+    //let lang = urlParams.get('lang');
     let conditions = "";
     let condition = "";
     let precondition = "";

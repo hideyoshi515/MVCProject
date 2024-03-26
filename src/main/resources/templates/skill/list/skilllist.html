@@ -20,7 +20,7 @@
                          th:style="'margin:0.2vw; width: 49.4%; height: auto; cursor:pointer;'"
                          th:if="${skill.type} == '1' or ${skill.type} == '4' or ${skill.type} == '5'"
                          th:id="'skill_no' + ${skill.id}"
-                         th:onclick="skillModalById([[${skill.id}]]);"
+                         th:onclick="skillModalById([[${skill.id}]],[[${sessionLocale}]]);"
                          data-toggle="modal" data-target="#skillmodal">
                         <div class="row g-0 align-items-center">
                             <div class="col-2">
@@ -58,7 +58,7 @@
                     <div class="card skillbox shadow-sm rounded-1 none-select skill_rare"
                          th:style="'margin:0.2vw; width: 49.4%; height: auto;'"
                          th:if="${skill.type} == '2'"
-                         th:onclick="skillModalById([[${skill.id}]]);"
+                         th:onclick="skillModalById([[${skill.id}]],[[${sessionLocale}]]);"
                          data-toggle="modal" data-target="#skillmodal">
                         <div class="row g-0 align-items-center">
                             <div class="col-2">
@@ -96,7 +96,7 @@
                     <div class="card skillbox shadow-sm rounded-1 none-select skill_own"
                          th:style="'margin:0.2vw; width: 49.4%; height: auto;'"
                          th:if="${skill.type} == '3'"
-                         th:onclick="skillModalById([[${skill.id}]]);"
+                         th:onclick="skillModalById([[${skill.id}]],[[${sessionLocale}]]);"
                          data-toggle="modal" data-target="#skillmodal">
                         <div class="row g-0 align-items-center">
                             <div class="col-2">
@@ -134,7 +134,7 @@
                     <div class="card skillbox shadow-sm rounded-1 none-select skill_evol"
                          th:style="'margin:0.2vw; width: 49.4%; height: auto;'"
                          th:if="${skill.type} == '6'"
-                         th:onclick="skillModalById([[${skill.id}]]);"
+                         th:onclick="skillModalById([[${skill.id}]],[[${sessionLocale}]]);"
                          data-toggle="modal" data-target="#skillmodal">
                         <div class="row g-0 align-items-center">
                             <div class="col-2">
