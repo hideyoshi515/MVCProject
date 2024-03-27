@@ -14,6 +14,8 @@ import lombok.NoArgsConstructor
 @AllArgsConstructor
 class Inshi {
 
+    lateinit var kor_name:String
+    lateinit var kor_desc:String
     lateinit var name:String
     lateinit var desc:String
 

@@ -13,6 +13,8 @@ interface InshiRepository:JpaRepository<Inshi, Long>{
     @Query("Select u From Inshi u")
     fun selectInshiAll(): List<Inshi>
 
+    @Query("Select u From Inshi u where u.id = :id")
+    fun selectInshi(id:Int): List<Inshi>
 
     @CacheEvict(
         value = ["selectInshi"],

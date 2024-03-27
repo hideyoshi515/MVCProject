@@ -20,16 +20,30 @@ class RecruitF {
     lateinit var loginid: String
 
     @Column(name = "repreuma")
-    var uma: Int = 0
+    var repreuma: Int = 0
 
     @Column(name = "represup")
-    var support: Int = 0
+    var represup: Int = 0
 
     @Column(name = "trainerid")
-    var trainderid: Int = 0
+    var trainerid: Int = 0
 
     @Column(name = "supportdeko")
     var supportdeko: Int = 0
+
+    @Column(name = "inshi")
+    lateinit var inshi: String
+
+    fun getInshiArray(): List<String> {
+        if (!::inshi.isInitialized || inshi.isNullOrEmpty()) {
+            return emptyList()
+        }
+        return inshi.split(",").map { it.trim() }
+    }
+
+    fun setInshiArray(array: List<String>) {
+        inshi = array.joinToString(",")
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

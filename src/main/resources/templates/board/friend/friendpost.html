@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="layout/default_layout"
+>
+<th:block layout:fragment="content">
+    <div class="w-100 h-100" id="load">
+        <img src="/img/loading.gif" alt="loading">
+    </div>
+
+    <div id='wrapper' class="d-flex justify-content-center align-items-start">
+        <div class="mainPage none-select" style="margin:0 auto;">
+            <h1 style="text-align: center; padding-top: 1rem; padding-bottom: 1rem; user-select: none !important;"
+                th:text="#{menu4}"></h1>
+            <div class="container">
+                <form action="/friend/submit" method="post" class="container mt-4" style="max-width: 720px;" id="postF">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="trainerid">[[#{trainerid}]]</label>
+                                <input type="text" id="trainerid" name="trainerid" class="form-control" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="repreuma">[[#{umamusume}]]</label>
+                                <select id="repreuma" name="repreuma" class="form-control" required>
+                                    <option th:if="${#strings.equals(sessionLocale, 'ko' ) || #strings.equals(sessionLocale, 'ja' )}"
+                                            value="">[[#{umamusume}]] [[#{select}]]
+                                    </option>
+                                    <option th:unless="${#strings.equals(sessionLocale, 'ko' ) || #strings.equals(sessionLocale, 'ja' )}"
+                                            value="">[[#{select}]] [[#{umamusume}]]
+                                    </option>
+                                    <!-- Populate options from ikuseiList -->
+                                    <th:block th:each="ikusei : ${ikuseiList}">
+                                        <option th:if="${#strings.equals(sessionLocale, 'ko' )}"
+                                                th:value="${ikusei.dressid}" th:text="${ikusei.kor_name}"></option>
+                                        <option th:unless="${#strings.equals(sessionLocale, 'ko' )}"
+                                                th:value="${ikusei.dressid}" th:text="${ikusei.jpn_name}"></option>
+                                    </th:block>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-9">
+                            <div class="form-group">
+                                <label for="represup">[[#{supportcard}]]</label>
+                                <select id="represup" name="represup" class="form-control" required>
+                                    <option th:if="${#strings.equals(sessionLocale, 'ko' ) || #strings.equals(sessionLocale, 'ja' )}"
+                                            value="">[[#{supportcard}]] [[#{select}]]
+                                    </option>
+                                    <option th:unless="${#strings.equals(sessionLocale, 'ko' ) || #strings.equals(sessionLocale, 'ja' )}"
+                                            value="">[[#{select}]] [[#{supportcard}]]
+                                    </option>
+                                    <!-- Populate options from supportList -->
+                                    <th:block th:each="support : ${supportList}">
+                                        <option th:if="${#strings.equals(sessionLocale, 'ko' )}"
+                                                th:value="${support.id}"
+                                                th:text="${'['+support.title+'] '+support.kor_name}"></option>
+                                        <option th:unless="${#strings.equals(sessionLocale, 'ko' )}"
+                                                th:value="${support.id}"
+                                                th:text="${'['+support.title+'] '+support.jpn_name}"></option>
+                                    </th:block>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label>[[#{genkai}]]</label><br>
+                                <select id="supportdeko" name="supportdeko" class="form-control" required>
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div id="inshiRows" class="inshiRows">
+
+                            </div>
+                            <button type="button" th:onclick="addInshiRow([[${sessionLocale}]]);"
+                                    class="btn btn-secondary mt-3" th:text="#{inshiadd}"></button>
+                        </div>
+                    </div>
+
+                    <input type="hidden" name="loginid" th:value="${session.loginId}">
+                    <input type="hidden" name="nickname" th:value="${session.nickname}">
+                    <input type="hidden" name="title" th:value="${session.loginId}">
+                    <input type="hidden" name="inshi" id="inshi" value="">
+
+                    <div class="row mt-3 mb-3">
+                        <div class="col-md-12">
+                            <a onclick="inshiPrint()" class="btn btn-primary">[[#{toroku}]]</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</th:block>
+</html>

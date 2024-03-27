@@ -17,7 +17,7 @@
                     align="center" valign="middle">
 
                     <div class="card skillbox shadow-sm rounded-1 none-select skill_common"
-                         th:style="'margin:0.2vw; width: 49.4%; height: auto; cursor:pointer;'"
+                         th:style="'margin:0.2vw; width: 32.8%; height: auto; cursor:pointer;'"
                          th:if="${skill.type} == '1' or ${skill.type} == '4' or ${skill.type} == '5'"
                          th:id="'skill_no' + ${skill.id}"
                          th:onclick="skillModalById([[${skill.id}]],[[${sessionLocale}]]);"
@@ -25,7 +25,7 @@
                         <div class="row g-0 align-items-center">
                             <div class="col-2">
                                 <img class="card-img p-0 m-1" th:src="@{${skill.img}}" alt=""
-                                     style="width: auto; height: 6vw; min-height: 64px" th:id="'img'+${skill.id}">
+                                     style="width: auto; height: 64px; min-height: 64px" th:id="'img'+${skill.id}">
                             </div>
                             <div class="col">
                                 <div class="card-body" th:style="'backgorund: white !important;'">
@@ -56,14 +56,14 @@
                         </div>
                     </div>
                     <div class="card skillbox shadow-sm rounded-1 none-select skill_rare"
-                         th:style="'margin:0.2vw; width: 49.4%; height: auto;'"
+                         th:style="'margin:0.2vw; width: 32.8%; height: auto; cursor:pointer;'"
                          th:if="${skill.type} == '2'"
                          th:onclick="skillModalById([[${skill.id}]],[[${sessionLocale}]]);"
                          data-toggle="modal" data-target="#skillmodal">
                         <div class="row g-0 align-items-center">
                             <div class="col-2">
                                 <img class="card-img p-0 m-1" th:src="@{${skill.img}}" alt=""
-                                     style="width: auto; height: 6vw; min-height: 64px" th:id="'img'+${skill.id}">
+                                     style="width: auto; height: 64px; min-height: 64px" th:id="'img'+${skill.id}">
                             </div>
                             <div class="col">
                                 <div class="card-body" th:style="'backgorund: white !important;'">
@@ -94,14 +94,14 @@
                         </div>
                     </div>
                     <div class="card skillbox shadow-sm rounded-1 none-select skill_own"
-                         th:style="'margin:0.2vw; width: 49.4%; height: auto;'"
+                         th:style="'margin:0.2vw; width: 32.8%; height: auto; cursor:pointer;'"
                          th:if="${skill.type} == '3'"
                          th:onclick="skillModalById([[${skill.id}]],[[${sessionLocale}]]);"
                          data-toggle="modal" data-target="#skillmodal">
                         <div class="row g-0 align-items-center">
                             <div class="col-2">
                                 <img class="card-img p-0 m-1" th:src="@{${skill.img}}" alt=""
-                                     style="width: auto; height: 6vw; min-height: 64px" th:id="'img'+${skill.id}">
+                                     style="width: auto; height: 64px; min-height: 64px" th:id="'img'+${skill.id}">
                             </div>
                             <div class="col">
                                 <div class="card-body" th:style="'backgorund: white !important;'">
@@ -132,14 +132,14 @@
                         </div>
                     </div>
                     <div class="card skillbox shadow-sm rounded-1 none-select skill_evol"
-                         th:style="'margin:0.2vw; width: 49.4%; height: auto;'"
+                         th:style="'margin:0.2vw; width: 32.8%; height: auto; cursor:pointer;'"
                          th:if="${skill.type} == '6'"
                          th:onclick="skillModalById([[${skill.id}]],[[${sessionLocale}]]);"
                          data-toggle="modal" data-target="#skillmodal">
                         <div class="row g-0 align-items-center">
                             <div class="col-2">
                                 <img class="card-img p-0 m-1" th:src="@{${skill.img}}" alt=""
-                                     style="width: auto; height: 6vw; min-height: 64px" th:id="'img'+${skill.id}">
+                                     style="width: auto; height: 64px; min-height: 64px" th:id="'img'+${skill.id}">
                             </div>
                             <div class="col">
                                 <div class="card-body" th:style="'backgorund: white !important;'">
