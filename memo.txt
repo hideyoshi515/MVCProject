@@ -30,6 +30,7 @@ textdata
 131->Ikusei Title description
 142->Ikusei Condition
 143->Ikusei Condition description
+147-Iinshi
 151->support card effect string
 154->151(support card effect) string's description
 155->support card unique effect string
@@ -42,7 +43,7 @@ textdata
 166/167->umamusume's secret
 168->foot size
 170->char name
-172->ninshi description
+172->Inshi description
 182->event name maybe
 
 294->support card effect table description

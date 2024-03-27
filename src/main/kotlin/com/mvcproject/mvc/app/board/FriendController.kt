@@ -13,12 +13,14 @@ import org.springframework.web.bind.annotation.GetMapping
 @Controller
 class FriendController(private val friendRepository: RecruitFRepository) {
 
-
     @GetMapping("/friend")
-    fun showBoard(model: Model, @PageableDefault(size = 10) pageable: Pageable): String {
+    fun showBoard(model: Model, @PageableDefault(size = 7) pageable: Pageable): String {
+
+        var pagesize: Int = pageable.pageSize;
         val threads: Page<RecruitF> = friendRepository.selectThread(pageable)
         model.addAttribute("threads", threads)
-        return "board/friend/index.html"
+        model.addAttribute("pageSize", pagesize)
+        return "board/friend/friendlist.html"
     }
 
 

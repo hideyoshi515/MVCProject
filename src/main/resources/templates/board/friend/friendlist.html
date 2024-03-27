@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="layout/default_layout"
+>
+<th:block layout:fragment="content">
+    <div class="w-100 h-100" id="load">
+        <img src="/img/loading.gif" alt="loading">
+    </div>
+
+    <div id='wrapper' class="d-flex justify-content-center align-items-start">
+        <div class="mainPage none-select" style="margin:0 auto;">
+            <h1 style="text-align: center; padding-top: 1rem; padding-bottom: 1rem; user-select: none !important;"
+                th:text="#{menu4}"></h1>
+            <div class="container">
+                <table class="table table-bordered text-center align-middle p-0 mx-auto my-0"
+                       style="background-color:#ffffff; max-width: 700px;"
+                       th:if="${threads != null}" th:each="thread : ${threads.content}">
+                    <tbody th:each="row : ${#numbers.sequence(1, pageSize)}">
+
+                    <tr th:if="${row &lt;= threads.content.size()}" style="height: 106px;">
+                        <td class="col-3 p-0 m-0"
+                            th:text="${#numbers.formatInteger(thread.trainderid,9,'WHITESPACE')}"></td>
+                        <td class="border-bottom-0 col-1 px-1 py-3 m-0">
+                            <img th:src="@{${'/img/umaimage/support/support_card_s_'+thread.support + '.png'}}"
+                                 style="width: 48px; aspect-ratio: 1;">
+                            <br>
+                            <p th:if="${thread.supportdeko} == '0'" th:utext="'☆☆☆☆'"></p>
+                            <p th:if="${thread.supportdeko} == '1'" th:utext="'★☆☆☆'"></p>
+                            <p th:if="${thread.supportdeko} == '2'" th:utext="'★★☆☆'"></p>
+                            <p th:if="${thread.supportdeko} == '3'" th:utext="'★★★☆'"></p>
+                            <p th:if="${thread.supportdeko} == '4'" th:utext="'★★★★'"></p>
+                        </td>
+
+                        <td class="border-end-0 align-middle col-1 pt-0 pb-1 ps-3 pe-0 mx-0 mt-0 mb-3">
+                            <img th:src="@{${'/img/umaimage/ikusei/chr_icon_'+(thread.uma/100)+'_'+thread.uma + '_02.png'}}"
+                                 style="width: 72px; aspect-ratio: 1;">
+                            <br>
+                        </td>
+                        <td class="border-start-0">
+
+                        </td>
+                    </tr>
+                    <tr th:unless="${row &lt;= threads.content.size()}"
+                        style="height: 106px; background-color: #eeeeee !important;">
+                        <td class="col-3 p-0 m-0">
+                        </td>
+                        <td class="border-bottom-0 col-1 px-1 py-3 m-0">
+                        </td>
+                        <td class="border-end-0 align-middle col-1 pt-0 pb-1 ps-3 pe-0 mx-0 mt-0 mb-3">
+                        </td>
+                        <td class="border-start-0">
+                        </td>
+                    </tr>
+                    </tbody>
+                    <tbody th:unless="${threads != null}">
+                    <tr>
+                        <td colspan="2">No threads found.</td>
+                    </tr>
+                    </tbody>
+
+                </table>
+                <nav aria-label="Page navigation" class="mt-1 mb-5">
+                    <ul class="pagination justify-content-center">
+                        <li th:class="${threads.first ? 'page-item disabled' : 'page-item'}">
+                            <a class="page-link" th:if="${!threads.first}"
+                               th:href="@{/friend?page=0&amp;size=${threads.size} }">First</a>
+                        </li>
+                        <li th:class="${threads.first ? 'page-item disabled' : 'page-item'}">
+                            <a class="page-link" th:if="${!threads.first}"
+                               th:href="@{/friend?page=${threads.number - 1}&amp;size=${threads.size} }">Previous</a>
+                        </li>
+                        <li class="page-item disabled">
+                            <span th:text="${threads.number + 1}"></span> / <span
+                                th:text="${threads.totalPages}" class="none-select"></span>
+                        </li>
+                        <li th:class="${threads.last ? 'page-item disabled' : 'page-item'}">
+                            <a class="page-link" th:if="${!threads.last}"
+                               th:href="@{/friend?page=${threads.number + 1}&amp;size=${threads.size} }">Next</a>
+                        </li>
+                        <li th:class="${threads.last ? 'page-item disabled' : 'page-item'}">
+                            <a class="page-link" th:if="${!threads.last}"
+                               th:href="@{/friend?page=${threads.totalPages - 1}&amp;size=${threads.size} }">Last</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</th:block>
+</html>

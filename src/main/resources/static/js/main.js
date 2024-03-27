@@ -6,9 +6,6 @@ const navbarlogo = navbar.querySelector('.navbar__logo');
 let hamburgMenuShow = false;
 const loading_page = document.getElementById("load");
 
-document.addEventListener("DOMContentLoaded", () => {
-    history.replaceState({}, null, location.pathname);
-});
 
 window.onload = function () {
     setTimeout(function () {
