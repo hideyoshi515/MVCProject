@@ -8,13 +8,17 @@ import org.springframework.data.jpa.repository.Query
 
 interface IkuseiRepository:JpaRepository<Ikusei, Long>{
 
+    @Cacheable("selectIkuseiall")
+    @Query("Select u From Ikusei u")
+    fun selectIkusei(): List<Ikusei>
+
     @Cacheable("selectIkusei")
     @Query("Select u From Ikusei u Where u.uma_name = :uma")
     fun selectIkusei(uma:String): List<Ikusei>
 
 
     @CacheEvict(
-        value = ["selectIkusei"],
+        value = ["selectIkusei", "selectIkuseiall"],
         allEntries = true
     )
     fun save(ikusei: Ikusei): Ikusei
