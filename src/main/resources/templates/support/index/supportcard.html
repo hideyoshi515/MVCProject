@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="layout/default_layout">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layout/default_layout">
 <th:block layout:fragment="content">
     <div class="w-100 h-100" id="load">
         <img src="/img/loading.gif" alt="loading">
@@ -9,51 +8,33 @@
         <div class="mainPage none-select" style="margin:0 auto;" th:each="supportcard : ${support}">
             <div class="row justify-content-center align-items-center m-0 p-0">
                 <div class="d-flex justify-content-center col-sm-4 m-0 mb-2 p-0 m" style="width: max(50%, 400px);">
-                    <div class="umasupport d-flex justify-content-center align-items-center flex-wrap m-0 p-0"
-                         style="width: calc(100%/calc(100%/(min(10vw,192px) + 2px)));"
-                         th:each="supportcard : ${support}">
-
+                    <div class="umasupport d-flex justify-content-center align-items-center flex-wrap m-0 p-0" style="width: calc(100%/calc(100%/(min(10vw,192px) + 2px)));">
                         <div class="justify-content-center">
-
                             <div class="m-0 p-0 text-center" th:utext="${supportcard.title}"></div>
                             <a class="d-flex m-auto position-relative" style="width: 170px;">
-                                <img class="umasupport_img"
-                                     th:src="@{${'/img/umaimage/support/support_thumb_' + supportcard.id + '.png'}}"
-                                     style="z-index: 1; min-width: 170px; width: 170px; aspect-ratio:1/1.3;">
-
+                                <img class="umasupport_img" th:src="@{${'/img/umaimage/support/support_thumb_' + supportcard.id + '.png'}}" style="z-index: 1; min-width: 170px; width: 170px; aspect-ratio:1/1.3;">
                                 <div th:if="${supportcard.command_id} == '0'">
-                                    <img class="m-0 p-0"
-                                            th:src="@{${'/img/umaimage/support/utx_ico_obtain_' + supportcard.command_id + supportcard.command_type + '.png'}}"
-                                            style="position: absolute; z-index: 2; top: 0; right: 3%; min-width:42px; width: 42px; aspect-ratio:1;">
+                                    <img class="m-0 p-0" th:src="@{${'/img/umaimage/support/utx_ico_obtain_' + supportcard.command_id + supportcard.command_type + '.png'}}" style="position: absolute; z-index: 2; top: 0; right: 3%; min-width:42px; width: 42px; aspect-ratio:1;">
                                 </div>
                                 <div th:unless="${supportcard.command_id} == '0'">
-                                    <img class="m-0 p-0"
-                                            th:src="@{${'/img/umaimage/support/utx_ico_obtain_' + supportcard.command_id + '.png'}}"
-                                            style="position: absolute; z-index: 2; top: 0; right: 3%; min-width:42px; width: 42px; aspect-ratio:1;">
-
+                                    <img class="m-0 p-0" th:src="@{${'/img/umaimage/support/utx_ico_obtain_' + supportcard.command_id + '.png'}}" style="position: absolute; z-index: 2; top: 0; right: 3%; min-width:42px; width: 42px; aspect-ratio:1;">
                                 </div>
-                                <img class="m-0 p-0"
-                                        th:src="@{${'/img/umaimage/support/supportcard_rarity_0' + supportcard.rarity + '.png'}}"
-                                        style="position: absolute; z-index: 2; top: 0; left: 7%; min-width:47px; width: 47px; aspect-ratio:1;">
+                                <img class="m-0 p-0" th:src="@{${'/img/umaimage/support/supportcard_rarity_0' + supportcard.rarity + '.png'}}" style="position: absolute; z-index: 2; top: 0; left: 7%; min-width:47px; width: 47px; aspect-ratio:1;">
                             </a>
-                            <div class="m-0 p-0 text-center"
-                                 th:if="${#strings.equals(#locale, 'ja' ) || #strings.equals(#locale, 'ja_JP' )}">
+                            <div class="m-0 p-0 text-center" th:if="${#strings.equals(#locale, 'ja' ) || #strings.equals(#locale, 'ja_JP' )}">
                                 [[${supportcard.jpn_name}]]
                             </div>
-                            <div class="m-0 p-0 text-center"
-                                 th:unless="${#strings.equals(#locale, 'ja' ) || #strings.equals(#locale, 'ja_JP' )||#strings.equals(#locale, 'en' ) || #strings.equals(#locale, 'en_US' )}">
+                            <div class="m-0 p-0 text-center" th:unless="${#strings.equals(#locale, 'ja' ) || #strings.equals(#locale, 'ja_JP' )||#strings.equals(#locale, 'en' ) || #strings.equals(#locale, 'en_US' )}">
                                 [[${supportcard.kor_name}]]
                             </div>
-                            <div class="m-0 p-0 text-center"
-                                 th:if="${#strings.equals(#locale, 'en' ) || #strings.equals(#locale, 'en_US' )}">
+                            <div class="m-0 p-0 text-center" th:if="${#strings.equals(#locale, 'en' ) || #strings.equals(#locale, 'en_US' )}">
                                 [[${supportcard.eng_name}]]
                             </div>
-                    </div>
+                        </div>
                     </div>
                 </div>
                 <div class="d-flex justify-content-center flex-wrap mb-2">
                     <div style="width: 300px; text-align:center;" th:each="effect : ${effects}">
-
                         <table class="table table-sm table-bordered m-0 p-0 h-100" border="1">
                             <thead class="h-100 align-top" th:switch="${effect.type}">
                             <td class="m-0 p-0" colspan="2" th:case="1" th:utext="#{sce1}"></td>
@@ -82,25 +63,14 @@
                             <td class="m-0 p-0" colspan="2" th:case="30" th:utext="#{sce30}"></td>
                             <td class="m-0 p-0" colspan="2" th:case="31" th:utext="#{sce31}"></td>
                             </thead>
-
                             <tbody>
                             <tr style="min-width:1rem;">
-                                <td class="m-0 p-0" th:if="${effect.unlocklv == '0'}"
-                                    th:text="#{kaihou_lv0}"></td>
-                                <td class="m-0 p-0" th:if="${effect.unlocklv != '0'}"
-                                    th:text="${'Lv. '+effect.unlocklv} + ' '+ #{kaihou}"></td>
-                                <td class="m-0 p-0 col-6"
-                                    th:if="${effect.minval == effect.maxval && (effect.type == '1' || effect.type == '2' || effect.type == '8' || effect.type == '15' || effect.type == '16' || effect.type == '18' || effect.type == '25' || effect.type == '26' || effect.type == '27' || effect.type == '28')  }"
-                                    th:text="${effect.minval}+'％'"></td>
-                                <td class="m-0 p-0 col-6"
-                                    th:if="${effect.minval == effect.maxval && !(effect.type == '1' || effect.type == '2' || effect.type == '8' || effect.type == '15' || effect.type == '16' || effect.type == '18' || effect.type == '25' || effect.type == '26' || effect.type == '27' || effect.type == '28')  }"
-                                    th:text="${effect.minval}"></td>
-                                <td class="m-0 p-0 col-6"
-                                    th:if="${effect.minval != effect.maxval && (effect.type == '1' || effect.type == '2' || effect.type == '8' || effect.type == '15' || effect.type == '16' || effect.type == '18' || effect.type == '25' || effect.type == '26' || effect.type == '27' || effect.type == '28')  }"
-                                    th:text="${effect.minval + '％ ～ ' + effect.maxval+'％'}">
-                                <td class="m-0 p-0 col-6"
-                                    th:if="${effect.minval != effect.maxval && !(effect.type == '1' || effect.type == '2' || effect.type == '8' || effect.type == '15' || effect.type == '16' || effect.type == '18' || effect.type == '25' || effect.type == '26' || effect.type == '27' || effect.type == '28')  }"
-                                    th:text="${effect.minval + ' ～ ' + effect.maxval}">
+                                <td class="m-0 p-0" th:if="${effect.unlocklv == '0'}" th:text="#{kaihou_lv0}"></td>
+                                <td class="m-0 p-0" th:if="${effect.unlocklv != '0'}" th:text="${'Lv. '+effect.unlocklv} + ' '+ #{kaihou}"></td>
+                                <td class="m-0 p-0 col-6" th:if="${effect.minval == effect.maxval && (effect.type == '1' || effect.type == '2' || effect.type == '8' || effect.type == '15' || effect.type == '16' || effect.type == '18' || effect.type == '25' || effect.type == '26' || effect.type == '27' || effect.type == '28')  }" th:text="${effect.minval}+'％'"></td>
+                                <td class="m-0 p-0 col-6" th:if="${effect.minval == effect.maxval && !(effect.type == '1' || effect.type == '2' || effect.type == '8' || effect.type == '15' || effect.type == '16' || effect.type == '18' || effect.type == '25' || effect.type == '26' || effect.type == '27' || effect.type == '28')  }" th:text="${effect.minval}"></td>
+                                <td class="m-0 p-0 col-6" th:if="${effect.minval != effect.maxval && (effect.type == '1' || effect.type == '2' || effect.type == '8' || effect.type == '15' || effect.type == '16' || effect.type == '18' || effect.type == '25' || effect.type == '26' || effect.type == '27' || effect.type == '28')  }" th:text="${effect.minval + '％ ～ ' + effect.maxval+'％'}"></td>
+                                <td class="m-0 p-0 col-6" th:if="${effect.minval != effect.maxval && !(effect.type == '1' || effect.type == '2' || effect.type == '8' || effect.type == '15' || effect.type == '16' || effect.type == '18' || effect.type == '25' || effect.type == '26' || effect.type == '27' || effect.type == '28')  }" th:text="${effect.minval + ' ～ ' + effect.maxval}"></td>
                             </tr>
                             </tbody>
                         </table>

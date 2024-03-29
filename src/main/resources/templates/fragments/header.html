@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layout/default_layout">
 <th:block th:fragment="headerFragment">
     <head>
         <title th:utext="#{header_title}"></title>
@@ -9,8 +9,7 @@
         <!--jQuery 추가-->
         <script src="/js/jquery.js"></script>
         <!--사용할 css 추가-->
-        <link rel="stylesheet"
-              href="https://chromium.googlesource.com/chromium/blink/+/refs/heads/main/Source/core/css/html.css">
+        <link rel="stylesheet" href="https://chromium.googlesource.com/chromium/blink/+/refs/heads/main/Source/core/css/html.css">
         <link rel="stylesheet" href="/css/bootstrap.min.css">
         <link rel="stylesheet" href="/css/style.css">
         <link rel="stylesheet" href="/css/layout.css">
@@ -22,8 +21,7 @@
         <script src="/js/fab.js" defer></script>
         <!--메인 슬라이드쇼용 css 및 script 추가-->
         <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-        <link rel="stylesheet" type="text/css"
-              href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
         <link rel="stylesheet" href="/css/body.css">
         <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
         <!--폰트-->
@@ -59,14 +57,12 @@
             <ul class="navbar__links">
                 <li>
                     <a href="/search">
-                        <i class="svg_colorWhite fa-solid fa-magnifying-glass fa-2x"
-                           style="width: 36px;height: 32px;max-height: 32px;"></i>
+                        <i class="svg_colorWhite fa-solid fa-magnifying-glass fa-2x" style="width: 36px;height: 32px;max-height: 32px;"></i>
                     </a>
                 </li>
                 <li>
                     <a href="#" onclick="loginPage()">
-                        <i class="svg_colorWhite fa-solid fa-user fa-2x"
-                           style="width: 36px;height: 32px;max-height: 32px;"></i>
+                        <i class="svg_colorWhite fa-solid fa-user fa-2x" style="width: 36px;height: 32px;max-height: 32px;"></i>
                     </a>
                 </li>
             </ul>
