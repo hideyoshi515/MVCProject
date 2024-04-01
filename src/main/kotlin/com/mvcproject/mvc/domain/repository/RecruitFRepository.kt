@@ -13,7 +13,6 @@ interface RecruitFRepository : JpaRepository<RecruitF, Long> {
     fun selectThread(pageable: Pageable): Page<RecruitF>
     @Query("SELECT u FROM RecruitF u order by u.id desc")
     fun selectNewThread(pageable: Pageable): Page<RecruitF>
-
-
+    fun selectAllThread() : Page<RecruitF>
 
 }

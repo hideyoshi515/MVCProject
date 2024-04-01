@@ -1,6 +1,6 @@
 package com.mvcproject.mvc.app.user
 
-import com.mvcproject.mvc.domain.model.dto.LoginRequest
+import com.mvcproject.mvc.domain.model.entity.Account
 import com.mvcproject.mvc.domain.service.UserService
 import jakarta.servlet.http.HttpServletRequest
 import lombok.RequiredArgsConstructor
@@ -8,6 +8,7 @@ import org.springframework.http.HttpHeaders
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.ModelAttribute
 import org.springframework.web.bind.annotation.RequestHeader
 import org.springframework.web.bind.annotation.SessionAttribute
 
@@ -51,5 +52,17 @@ class UserController(private val userService: UserService) {
 
         // マイページのビュー名を返します。
         return "/user/mypage.html"
+    }
+
+    @GetMapping("/mypage/edit")
+    fun editProfile(
+        model: Model,
+        @SessionAttribute(name = "loginId", required = false) loginId: String?,
+        @SessionAttribute(name = "nickname", required = false) nickname: String?,
+        @RequestHeader(value = HttpHeaders.REFERER, defaultValue = "") referer: String,
+        @ModelAttribute("account") account: Account,
+        request: HttpServletRequest
+    ): String {
+        return "/mypage"
     }
 }
